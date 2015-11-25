@@ -1,0 +1,23 @@
+{
+  "name": "PHP_Avance_II_My_Blog-Creator",
+  "version": "1.0.0",
+  "description": "blog creator",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "coquel_d@git.epitech.eu:/coquel_d/PHP_Avance_II_My_Blog-Creator"
+  },
+  "author": "coquel_d bourge_n",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "md5": "^2.0.0",
+    "mongoose": "^4.2.7",
+    "swig": "^1.4.2"
+  }
+}
