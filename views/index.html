@@ -1,0 +1,54 @@
+{% extends "Base\base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}home{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+{% endblock %}
+{% block body %}
+
+		<div id="container">
+			<div class="top cl-effect-21">
+				<a class="box_login" href="#"><span>Connexion</span></a>
+				<a class="box_signUp" href="#"><span>Inscription</span></a>
+			</div>
+			<h1 class="logo">
+			 <img src="../assets/img/logo.png">
+			</h1>
+		</div>
+		
+		<!-- main content -->
+		<div class="main">
+			<h2>Crée ton Blog</h2>
+			<button class="button button--pipaluk button--inverted">Crée Ton Blog</button>
+		</div>
+
+    <!-- Overlay -->
+    <div class="fade"></div>
+
+    <!-- Popin -->
+		<div class="morph-content login">
+						<div class="content-style-form content-style-form-1">
+							<span class="icon icon-close">Close</span>
+							<h2>Connexion</h2>
+							<form>
+								<p><label>Email</label><input type="text" /></p>
+								<p><label>Password</label><input type="password" /></p>
+								<p><button type="submit">Login</button></p>
+							</form>
+						</div>
+				</div>
+				<div class="morph-content sign">
+						<div class="content-style-form content-style-form-2">
+							<span class="icon icon-close">Close</span>
+							<h2>Inscription</h2>
+							<form>
+								<p><label>Email</label><input type="text" /></p>
+								<p><label>Password</label><input type="password" /></p>
+								<p><label>Repeat Password</label><input type="password" /></p>
+								<p><button type="submit">Sign Up</button></p>
+							</form>
+						</div>
+				</div>
+{% endblock %}
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+</html>

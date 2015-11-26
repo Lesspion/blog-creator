@@ -6,6 +6,8 @@ var swig 	   = require('swig');
 
 mongoose.connect('mongodb://localhost:27017/blog');
 
+app.use('/assets', express.static(__dirname + '/assets'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -17,12 +19,12 @@ app.set('view cache', false);
 swig.setDefaults({ cache: false });
 
 
-var port = process.env.PORT || 8080;
+var port = 1337;
 
 //app.use('/', );
 
-app.get('/test', function (req, res) {
-	res.render('example', {
+app.get('/', function (req, res) {
+	res.render('index', {
 		pagename: "Test example",
 		authors: ['Adeline', 'Chris', 'Ourdia', 'Nelly', "Soso"]
 	});

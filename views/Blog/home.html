@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>MyBlog</title>
+		<meta name="description" content="Création de Blog" />
+		<link rel="stylesheet" type="text/css" href="../css/homeBlog.css" />
+</head>
+<body class="blog">
+	<header class="header_container">
+		<div class="container">
+			<div class="logo">
+				<h1>
+					<!-- Si upload photo-->
+					<a href="#"><img src="../img/test.jpg" alt="Image de mon blog"></a>
+					<!-- else 
+					qqchose d'autres-->
+				</h1>
+			</div>
+			<div class="nav_container">
+				<nav class="main_navbar navbar">
+					<ul id="menu-menu" class="nav">
+						<li><a href="#">ACCUEIL</a></li>
+						<li><a href="#">A PROPOS</a></li>
+						<li><a href="#">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<section class=" section_container container">
+		<div class="main_section">
+			<!-- Swig faire une boucle pour les articles récents-->
+			<div class="news">
+				<header class='content_banner'>
+					<div>
+						<h3>DERNIERS ARTICLES</h3>
+					</div>
+				</header>
+					<div class="blog_post">
+						<!--Autre page twig à boucler-->
+						<div class="latest-post">
+							<div class="w250 img">img</div>
+							<div class="content_post w250">
+								<div class="post_title">
+									<a href="#">
+										<h4>Boulou</h4>
+									</a>
+								</div>
+								<div class="post_desc">
+									<p>sdgjhezlvinvr nbrjtb,fkj lkrjety,bjr kljtrhkje</p>
+								</div>
+								<div class="post_meta">
+									<div class="meta_info">
+										<span class="date">17 novembre 2015 - 18h38 min</span>
+									</div>
+									<div class="meta_info">
+        						<span class="comment">2<!--{{ idea.nbComments }}--></span>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+			</div>
+			<div class="news"></div>
+			<div class="news"></div>
+		</div>
+		<aside class="page_side_bar home_sidebar">
+			<div id="search" class="widget_search">
+				<div class="widget_title">
+					<h4>UNE RECHERCHE ?</h4>
+				</div>
+				<form id="searchform" class="search" method="get" action="#">
+					<div class="input-append">
+						<input type="text" id="s" name="s" clas="search_text" placeholder="Rechercher">
+						<input type="submit" id="search_submit" name="submit" class="btn search_btn" value="Rechercher">
+					</div>
+				</form>
+			</div>
+			<div id="postlist" class="widget_container">
+				<div class="widget_title">
+					<h4>ARTICLES POPULAIRES</h4>
+				</div>
+				<!--ARTICLE BOUCLE SWIG-->
+				<div>
+					<!--photo / titre
+								date
+						border_bottom-->
+				</div>
+			</div>
+		</aside>
+	</section>
+	<footer class="footer_container container">
+		
+	</footer>
+</body>
+</html>
