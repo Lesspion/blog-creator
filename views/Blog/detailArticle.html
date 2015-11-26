@@ -12,18 +12,17 @@
 			<div class="news">
 				<header class='content_banner'>
 					<div>
-						<h3>DERNIERS ARTICLES</h3>
+						<h3>ArticleTitle</h3>
 					</div>
 				</header>
-					<div class="blog_post">
-						<!--Autre page twig à boucler-->
-            {% include 'articles.html'%}
-					</div>
+				<div class="blog_post">
+					<!--Juste l'article choisi-->
+        			{% include 'comment.html'%}
+				</div>
 			</div>
-			<div class="news"></div>
-			<div class="news"></div>
 		</div>
 		<aside class="page_side_bar home_sidebar">
+			<div id="search" class="widget_search">
 				{% include 'search.html'%}
 			<div id="postlist" class="widget_container">
 				<div class="widget_title">
@@ -38,6 +37,6 @@
 			</div>
 		</aside>
 	</section>
-  <div class="clear"></div>
-{% include '../BaseFront/footer.html' %}
-{% endblock %}
+	<div class="clear"></div>
+	{% include '../BaseFront/footer.html' %}
+{% endblock%}

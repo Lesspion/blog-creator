@@ -1,3 +1,5 @@
+/*--------------------------------HOMEPAGE BLOG---------------------------------*/
+
 .blog {
 	background-color: #FFF;
 	overflow-y: scroll; 
@@ -6,7 +8,7 @@
 	margin: 20px auto;
 	line-height: 17px;
 	color: #000;
-	min-height: 1500px;
+	min-height: 1280px;
 }
 .clear {
 	clear: both;
@@ -187,5 +189,77 @@ form {
 .meta_info .date {
 	font-size: 12px;
 	color: #B2B2B2;
-	padding-left: 5px;
+}
+
+/*FOOTER BLOG*/
+
+.footer_container {
+    color: #FFF;
+}
+.footer_container {
+    line-height: 20px;
+    font-size: 12px;
+}
+.container.footer {
+    border-top: 2px solid #E8E8E8;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 20px;
+    width: 96%;
+    margin-left: 20px;
+}
+.copy {
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 0.8em;
+}
+
+
+/*---------------------------------DETAIL ARTICLE--------------------------------*/
+
+.ma {
+    margin: auto;
+}
+.mb {
+    margin-bottom: 15px;
+}
+.w630 {
+    width: 630px;
+}
+.comment_header h4 {
+    line-height: 18px;
+    color: #FFF;
+    background-color: #575050;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    padding: 10px 20px 8px;
+}
+.comment_form input[type = 'text'] {
+    width: 48.9362%;
+    margin-left: 0px;
+    display: inline-block;
+    min-height: 30px;
+    line-height: 48px;
+    border: 1px solid #CCC;
+    height: 20px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;;
+}
+.comment_form input[type = 'submit'] {
+    display: block;
+    margin-top: 2.5em;
+    padding: 1.5em;
+    width: 37%;
+    border: medium none;
+    background: #E75854 none repeat scroll 0% 0%;
+    color: #F9F6E5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 1.em;
 }

@@ -25,8 +25,22 @@ var port = 1337;
 
 app.get('/', function (req, res) {
 	res.render('index', {
-		pagename: "Test example",
-		authors: ['Adeline', 'Chris', 'Ourdia', 'Nelly', "Soso"]
+		pagename: "HomePage",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/blog', function (req, res) {
+	res.render('Blog/home', {
+		pagename: "Home",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/blog/article', function (req, res) {
+	res.render('Blog/detailArticle', {
+		pagename: "detailArticle",
+		authors: ['Adeline', 'Chris']
 	});
 });
 
