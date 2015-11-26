@@ -3,6 +3,7 @@ var app        = express();
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var swig 	   = require('swig');
+var forceDomain = require('forcedomain');
 
 mongoose.connect('mongodb://localhost:27017/blog');
 
@@ -17,16 +18,27 @@ app.set('view cache', false);
 swig.setDefaults({ cache: false });
 
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 //app.use('/', );
 
-app.get('/test', function (req, res) {
+app.get('/', function (req, res) {
 	res.render('example', {
 		pagename: "Test example",
 		authors: ['Adeline', 'Chris', 'Ourdia', 'Nelly', "Soso"]
 	});
 });
 
-app.listen(port);
+app.get('/test', function (req, res) {
+	res.send('boulou');
+});
+
+// app.use(forceDomain({
+//   hostname: 'www.boulouhidden.prod',
+//   port: '3000'
+// }));
+
+//app.listen(port);
 console.log('Magic happens on port ' + port);
+
+module.exports = app;
