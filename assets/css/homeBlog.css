@@ -8,7 +8,8 @@
 	margin: 20px auto;
 	line-height: 17px;
 	color: #000;
-	min-height: 1280px;
+	min-height: 800px;
+    max-height: 1280px;
 }
 .clear {
 	clear: both;
@@ -228,6 +229,7 @@ form {
 .w630 {
     width: 630px;
 }
+
 .comment_header h4 {
     line-height: 18px;
     color: #FFF;
@@ -236,19 +238,22 @@ form {
     margin-bottom: 8px;
     padding: 10px 20px 8px;
 }
-.comment_form input[type = 'text'] {
+.comment_form input[type = 'text']{
     width: 48.9362%;
     margin-left: 0px;
     display: inline-block;
     min-height: 30px;
     line-height: 48px;
-    border: 1px solid #CCC;
+    border: 2px solid #EBD3BD;;
     height: 20px;
     padding: 4px 6px;
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 20px;
     color: #555;;
+}
+textarea {
+    border: 2px solid #EBD3BD;
 }
 .comment_form input[type = 'submit'] {
     display: block;
