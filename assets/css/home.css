@@ -2,9 +2,14 @@ body {
 	background: url(../img/background.jpg) no-repeat scroll center bottom; 
 }
 #container h1 {
-	margin: auto;
-	width: 16%;
+	width: 41%;
+	margin: auto auto auto 19%;
+	float: left;
 }
+::-webkit-input-placeholder { font-size: 0.8em; }
+::-moz-placeholder { font-size: 0.8em; } /* firefox 19+ */
+:-ms-input-placeholder { font-size: 0.8em; } /* ie */
+input:-moz-placeholder { font-size: 0.8em; }
 
 .fade {
 	display: block;
@@ -49,7 +54,7 @@ body {
 	width: 80%;
 	height: 22px;
 	line-height: 2.5em;
-	padding: 0px 0.5em 0px 3em;
+	padding: 0px 0.5em 0px 2em;
 	font-size: 1.5em;
 	background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
 	float: left;
