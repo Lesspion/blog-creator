@@ -36,6 +36,44 @@ body {
 	outline: medium none;
 	font-size: 1.2em;
 }
+.nav form {
+	margin-top: 17px;
+}
+.nav img {
+	position: absolute;
+	left: 0px;
+	top: 14px;
+}
+.nav input {
+	width: 80%;
+	height: 22px;
+	line-height: 2.5em;
+	padding: 0px 0.5em 0px 3em;
+	font-size: 1.5em;
+	background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
+	float: left;
+	color: #FFF;
+	border-width: 1px 0px 1px 1px;
+	border-style: solid;
+	border-color: rgba(204, 204, 204, 0.66);
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-sizing: border-box;
+	transition: all 0.3s ease 0s;
+}
+nav form button {
+	display: block;
+	background: rgba(84, 98, 95, 0.36) none repeat scroll 0% 0%;
+	border: medium none;
+	color: #F7F7F7;
+	text-transform: uppercase;
+	padding: 0px 0.5em;
+	float: left;
+	height: 1.7em;
+}
 .cl-effect-21 a {
 	padding: 10px;
 	color: #E1D2AB;
@@ -181,7 +219,7 @@ body {
 	position: fixed;
 	visibility:hidden;
 	opacity:0;
-	z-index:1000;
+	z-index:2000;
 	transition:0.3s ease;
 	transform:scale(0) translate(-100%, -100%);
 }
@@ -193,9 +231,12 @@ body {
 	position: fixed;
 	visibility:hidden;
 	opacity:0;
-	z-index:1000;
+	z-index:2000;
 	transition:0.3s ease;
 	transform:scale(0) translate(-100%, -100%);
+}
+form p {
+	margin: 0px 0px 15px;
 }
 .content-style-form h2 {
     margin: 0px;
@@ -214,13 +255,13 @@ body {
 	font-weight: bold;
 }
 .content-style-form input[type="text"], .content-style-form input[type="password"] {
-	padding: 10px;
+	padding: 5px;
 	width: 93%;
 	border: 2px solid #EBD3BD;
 	background: transparent none repeat scroll 0% 0%;
 	color: #B09A86;
 	font-weight: 300;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 .content-style-form button {
     display: block;

@@ -243,10 +243,6 @@ ul {
     }
 }
 
-.content-section {
-    padding-top: 100px;
-}
-
 .download-section {
     width: 100%;
     padding: 50px 0;
@@ -267,7 +263,7 @@ ul {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 115px;
     }
 
     .download-section {
