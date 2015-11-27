@@ -34,6 +34,7 @@ body {
 	color: #FFF;
 	position: relative;
 	outline: medium none;
+	font-size: 1.2em;
 }
 .cl-effect-21 a {
 	padding: 10px;
@@ -96,7 +97,7 @@ body {
 	margin: 0 auto;
 	padding: 275px 0 10em 0;
 	max-width: 1100px;
-	width: 22%;
+	width: 27%;
 }
 
 .main h2 {
@@ -262,4 +263,60 @@ body {
 	font-style: normal;
 	position: relative;
 	display: block;
+}
+/*-------------------------------PARTIE BLOGS-------------------------------*/
+
+
+#blogs h2 {
+	line-height: 18px;
+    color: #FFF;
+    background-color: #575050;
+    margin-top: 30px;
+	margin-bottom: 8px;
+	padding: 10px 20px 10px;
+	text-align: left;
+}
+.blogs {
+    width: 100%;
+    display: table;
+    margin: auto;
+}
+.blogs-col {
+	width: 33%;
+	display: inline-block;
+	margin-top: 40px;
+}
+.blogs .blogs-col ul li a .blog-title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    height: 38px;
+    overflow: hidden;
+}
+.blogs-col img{
+	float: left;
+}
+/*search*/
+
+.search .input-append {
+    position: relative;
+}
+.input-append{
+    margin-bottom: 10px;
+    vertical-align: middle;
+    font-size: 0px;
+    white-space: nowrap;
+}
+.search input[type="text"] {
+    width: 20%;
+    min-height: 30px;
+    border: 2px solid #EBD3BD
+}
+.search input[type="submit"] {
+    position: absolute;
+    height: 100%;
+    transition: all 0.25s ease-in 0s;
+    padding: 4px 12px;
+    background-color: #E75854;
+    left: 57%;
 }
