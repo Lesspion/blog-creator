@@ -1,7 +1,5 @@
 body {
-	background: url(../img/background.jpg); 
-	background-repeat: no-repeat;
-	background-attachment: fixed
+	background: url(../img/background.jpg) no-repeat scroll center bottom; 
 }
 #container h1 {
 	margin: auto;
@@ -116,7 +114,7 @@ body {
 	min-width: 99%;
 	max-width: 99%;
 	display: block;
-	padding:  1.5em 3em;
+	padding:  1.9em 3em;
 	border: none;
 	background: none;
 	color: inherit;
@@ -171,29 +169,30 @@ body {
 .morph-content {
 	background: #FFF;
 	position: relative;
-	width: 25%;
+	width: 30%;
 	padding: 10px;
 }
 .sign {	
 	left:50%;
-	top:53%;	
+	top: 56%;	
 	position:absolute;
 	display: block;
+	position: fixed;
 	visibility:hidden;
 	opacity:0;
-	z-index:300;
+	z-index:1000;
 	transition:0.3s ease;
 	transform:scale(0) translate(-100%, -100%);
 }
 .login {
-	z-index: 300;
 	left:50%;
-	top:53%;	
+	top: 56%;	
 	position:absolute;
 	display: block;
+	position: fixed;
 	visibility:hidden;
 	opacity:0;
-	z-index:300;
+	z-index:1000;
 	transition:0.3s ease;
 	transform:scale(0) translate(-100%, -100%);
 }
@@ -202,7 +201,7 @@ body {
     padding: 0.4em 0px 0.3em;
     text-align: center;
     font-weight: 300;
-    font-size: 3.5em;
+    font-size: 3.0em;
     color: #E75854;
 }
 .content-style-form label {
@@ -220,20 +219,20 @@ body {
 	background: transparent none repeat scroll 0% 0%;
 	color: #B09A86;
 	font-weight: 300;
-	font-size: 2.2em;
+	font-size: 1.2em;
 }
 .content-style-form button {
     display: block;
-    margin-top: 2.5em;
-    padding: 1.5em;
-    width: 100%;
-    border: medium none;
-    background: #E75854 none repeat scroll 0% 0%;
-    color: #F9F6E5;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 800;
-    font-size: 1.25em;
+	margin-top: 2.5em;
+	width: 93%;
+	border: medium none;
+	background: #E75854 none repeat scroll 0% 0%;
+	color: #F9F6E5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 800;
+	padding: 1em;
+	font-size: 1em;
 }
 .content-style-form .icon-close {
     top: -12px;
