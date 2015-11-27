@@ -5,6 +5,7 @@ body {
 	margin: auto;
 	width: 16%;
 }
+
 .fade {
 	display: block;
 	visibility:hidden;
@@ -64,15 +65,24 @@ body {
 	box-sizing: border-box;
 	transition: all 0.3s ease 0s;
 }
+.nav form input:focus {
+	outline: medium none;
+	border: 1px solid #686868;
+	background: #575050 none repeat scroll 0% 0%;
+}
+.nav form input:hover {
+	border: 1px solid rgba(98, 98, 98, 0.7);
+	
+	background: rgba(158, 142, 129, 0.77) none repeat scroll 0% 0%;
+}
 nav form button {
 	display: block;
-	background: rgba(84, 98, 95, 0.36) none repeat scroll 0% 0%;
+	background: #575050 none repeat scroll 0% 0%;
 	border: medium none;
 	color: #F7F7F7;
 	text-transform: uppercase;
 	padding: 0px 0.5em;
-	float: left;
-	height: 1.7em;
+	height: 1.65em;
 }
 .cl-effect-21 a {
 	padding: 10px;
