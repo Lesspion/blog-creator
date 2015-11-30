@@ -1557,6 +1557,7 @@ pre code {
 .container {
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 306px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -3357,9 +3358,6 @@ fieldset[disabled] .btn-link:focus {
 .fade.in {
   opacity: 1;
 }
-.collapse {
-  display: none;
-}
 .collapse.in {
   display: block;
 }
@@ -4196,10 +4194,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-image: none;
   }
 }
-@media (min-width: 768px) {
+
   .navbar-nav {
-    float: left;
     margin: 0;
+    width: 100%;
   }
   .navbar-nav > li {
     float: left;

@@ -37,6 +37,7 @@ a {
 }
 ul {
     list-style: outside none none;
+    width: 270px;
 }
 
 .navbar-custom {
@@ -263,7 +264,7 @@ ul {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 115px;
+        padding-top: 235px;
     }
 
     .download-section {
