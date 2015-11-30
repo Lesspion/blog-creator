@@ -44,5 +44,12 @@ app.get('/blog/article', function (req, res) {
 	});
 });
 
+app.get('/profil', function (req, res) {
+	res.render('BaseBack/profil', {
+		pagename: "Profil",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
 app.listen(port);
 console.log('Magic happens on port ' + port);

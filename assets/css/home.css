@@ -43,10 +43,12 @@ input:-moz-placeholder { font-size: 0.8em; }
 	outline: medium none;
 	font-size: 1.2em;
 }
+/* search */
+
 .nav form {
-	margin-top: 17px;
-	position: relative;
-	float: left;
+    margin-top: 17px;
+    position: relative;
+    float: left;
 }
 .nav img {
 	position: absolute;
@@ -355,28 +357,4 @@ form p {
 }
 .blogs-col img{
 	float: left;
-}
-/*search*/
-
-.search .input-append {
-    position: relative;
-}
-.input-append{
-    margin-bottom: 10px;
-    vertical-align: middle;
-    font-size: 0px;
-    white-space: nowrap;
-}
-.search input[type="text"] {
-    width: 20%;
-    min-height: 30px;
-    border: 2px solid #EBD3BD
-}
-.search input[type="submit"] {
-    position: absolute;
-    height: 100%;
-    transition: all 0.25s ease-in 0s;
-    padding: 4px 12px;
-    background-color: #E75854;
-    left: 57%;
 }
