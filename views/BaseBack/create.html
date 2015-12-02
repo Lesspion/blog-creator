@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}create{% endblock %}
+{% block stylesheets %}
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/header.css" rel="stylesheet">
+<link href="../assets/css/grayscale.css" rel="stylesheet">
+<link href="../assets/css/back.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/styleSkin.css" />
+{% endblock %}
+{% block body %}
+	{% include 'header.html' %}
+	<div class="main">
+	<!--Si premier blog-->
+		<label><h3>Nom du blog</h3></label>
+		<input type="text" name="name" placeholder="Nom du blog"/>
+		<!--else-->
+		<label><h3>Titre</h3></label>
+		<input type="text" name="title" placeholder="Titre de l'article"/>
+		<textarea id="myTextarea"></textarea>
+		<label><h3>Tags</h3></label>
+		<input type="text" name="tag" placeholder="tag"/>
+		<input type="submit" name="submit" value="Publiez"/>
+	</div>
+{% block javascripts%}
+	{% parent %}
+		<script type="text/javascript" src="../assets/js/tinymce.min.js"></script>
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+{% endblock %}
+{% endblock %}

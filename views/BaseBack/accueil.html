@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}accueil{% endblock %}
+{% block stylesheets %}
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/header.css" rel="stylesheet">
+<link href="../assets/css/grayscale.css" rel="stylesheet">
+<link href="../assets/css/back.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+	{% include 'header.html' %}
+
+	<section id="blogs" class="container content-section text-center">
+        <div class="row">
+        	<div>
+        		<h2>Blogs</h2>
+        	</div>
+            <div class="blogs line">
+            <!--BOUCLE-->
+                {% include '../BaseFront/blogsHome.html' %}
+    		</div>
+        </div>
+    </section>
+
+
+{% block javascripts%}
+	{% parent %}
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+{% endblock %}
+
+
+{% endblock %}

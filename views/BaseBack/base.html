@@ -7,7 +7,7 @@
             <meta name="description" content="Voici mon Blog" />
             {% block stylesheets %}{% endblock %}
     </head>
-    <body class= "back" "{% block rootclass %}{% endblock %}">
+    <body class = "{% block rootclass %}{% endblock %} back">
         {% block body %}{% endblock %}
 
         {% block javascripts %}
