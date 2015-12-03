@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}articles{% endblock %}
+{% block stylesheets %}
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/header.css" rel="stylesheet">
+<link href="../assets/css/grayscale.css" rel="stylesheet">
+<link href="../assets/css/back.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+	{% include 'header.html' %}
+	<div class="main">
+		<div>
+        	<a href="/create"><button class="button button--pipaluk button--inverted clear">Poster</button></a>
+        </div>
+		<div>
+        	<h2>Mes Articles</h2>
+        </div>
+		<div class="blog_post">
+			{% include 'list.html'%}
+		</div>
+	</div>
+{% block javascripts%}
+	{% parent %}
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+{% endblock %}
+{% endblock %}

@@ -65,5 +65,12 @@ app.get('/create', function (req, res) {
 	});
 });
 
+app.get('/articles', function (req, res) {
+	res.render('BaseBack/articles', {
+		pagename: "Mes articles",
+		authors: ['Adeline', 'Chris']
+	});
+})
+
 app.listen(port);
 console.log('Magic happens on port ' + port);

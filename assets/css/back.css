@@ -90,7 +90,7 @@ h2 {
     background-color: #575050;
 	padding: 10px 20px 10px;
 	text-align: left;
-	width: 90%;
+	width: 100%;
 	display: block;
 	margin: auto;
 }
@@ -186,4 +186,80 @@ h2 {
 	border: none;
 	color: #FFF;
 	float: right;
+}
+
+/*---------------------------TOUS LES ARTICLES-------------------- */
+
+.articles .latest-post {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 15px;
+    width: 620px;
+}
+.articles .img img{
+	min-height: 1px;
+	margin-left: 20px;
+	float: left;
+	max-width: 100%;
+	height: 250px;
+	vertical-align: middle;
+	border: 0px none;
+	min-width: 100%;
+}
+.articles .w250 {
+	width: 250px;
+}
+.articles .content_post {
+	color: #000;
+	float: left;
+	min-height: 1px;
+	margin-left: 100px;
+}
+.articles .post_title h4 {
+	margin: 0;
+}
+.articles .meta_info {
+    line-height: 18px;
+    float: left;
+    margin-right: 28px;
+}
+.articles .comment {
+	font-size: 12px;
+	color: #B2B2B2;
+	padding-left: 5px;
+}
+.articles .comment::before {
+    content: "";
+    background: transparent url("../img/social-widgets.png") no-repeat scroll 0% 0%;
+    height: 15px;
+    min-width: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+.articles .meta_info .comment::before {
+    background-position: -30px 0px;
+}
+.articles .meta_info .date {
+	font-size: 12px;
+	color: #B2B2B2;
+}
+.edit {
+	float: right;
+	padding: 30px;
+}
+.edit form {
+	display: inline;
+}
+.edit button {
+	border-radius: 18px;
+	border: medium none;
+	margin-left: 25px;
+	color: white;
+	background-color: #575050;
+}
+.edit button:hover {
+	transform: scale(1.5);
+}
+.edit a:hover{
+	text-decoration: underline;
 }

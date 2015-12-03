@@ -27,5 +27,19 @@
 	{% parent %}
 		<script type="text/javascript" src="../assets/js/tinymce.min.js"></script>
 		<script type="text/javascript" src="../assets/js/home.js"></script>
+		<script>tinymce.init({ 
+    	selector:'#myTextarea',
+    	theme: 'modern',
+    	width: 850,
+    	height: 300,
+    	content_css: 'skins/lightgray/content.min.css',
+    	menubar: false,
+    	plugins: [
+	      'autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+	      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+	      'save table contextmenu directionality emoticons template paste textcolor'
+	    ],
+    	toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | link image |  preview media fullpage | forecolor backcolor emoticons'
+    });</script>
 {% endblock %}
 {% endblock %}
