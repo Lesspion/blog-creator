@@ -1,6 +1,6 @@
 /*--------------------------------HOMEPAGE BLOG---------------------------------*/
 
-.blog {
+.blog, .details{
 	background-color: #FFF;
 	overflow-y: scroll; 
 	width: 980px;
@@ -9,7 +9,6 @@
 	line-height: 17px;
 	color: #000;
 	min-height: 800px;
-    max-height: 1280px;
 }
 .clear {
 	clear: both;
@@ -161,7 +160,7 @@ form {
 .w250 {
 	width: 250px;
 }
-.content_post {
+.blog .content_post {
 	color: #000;
 	float: left;
 	min-height: 1px;
@@ -179,6 +178,10 @@ form {
 	font-size: 12px;
 	color: #B2B2B2;
 	padding-left: 5px;
+}
+.comment_form{
+    clear: both;
+    padding-top: 54px;
 }
 .comment::before {
     content: "";
@@ -263,7 +266,7 @@ textarea {
     display: block;
     margin-top: 2.5em;
     padding: 1.5em;
-    width: 37%;
+    width: 40%;
     border: medium none;
     background: #E75854 none repeat scroll 0% 0%;
     color: #F9F6E5;
@@ -271,4 +274,17 @@ textarea {
     letter-spacing: 1px;
     font-weight: 800;
     font-size: 1.em;
+}
+.comment_users img {
+    min-width: 80px;
+    height: 80px;
+    float: left;
+}
+.details .content_post {
+    color: #000;
+    float: left;
+    min-height: 1px;
+    padding: 15px;
+    width: 82%;
+    background-color: #E9E9E9;
 }
