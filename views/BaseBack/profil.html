@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}profil{% endblock %}
+{% block stylesheets %}
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/header.css" rel="stylesheet">
+<link href="../assets/css/grayscale.css" rel="stylesheet">
+<link href="../assets/css/back.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+	{% include 'header.html' %}
+
+	<div class="main">
+		<div>
+			<img src="../assets/img/user-test.gif" alt="profil">
+			<h3>Lili</h3>
+		</div>
+		<a href="/create"><button class="button button--pipaluk button--inverted clear">Crée Un Blog</button></a>
+		<div class="infos">
+			<div class="block">
+	        	<h2>Mes Blogs</h2>
+	        	<div>
+	        		<p><a href="#">loulilou</a></p>
+	        	<p><a href="#">fff965</a></p>
+	        	</div>
+			</div>
+			<div class="block">
+				<h2>Mes Amis</h2>
+				<div>
+					<p><a href="#">moi</a></p>
+					<p><a href="#">moi</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% block javascripts%}
+	{% parent %}
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+{% endblock %}
+{% endblock %}

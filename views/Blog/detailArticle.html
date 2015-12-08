@@ -1,6 +1,6 @@
 {% extends "../BaseFront/base.html" %}
 {% block title %}MyBlog{% endblock %}
-{% block rootclass %}blog{% endblock %}
+{% block rootclass %}details{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="../assets/css/homeBlog.css">
 {% endblock %}
@@ -16,10 +16,9 @@
 					</div>
 				</header>
 				<div class="blog_post">
-					<!--Juste l'article choisi-->
-					<!--{% for item in article %} {-->
+					
         			{% include 'comment.html'%}
-        			<!--{% endfor %}-->
+        			
 				</div>
 			</div>
 		</div>
