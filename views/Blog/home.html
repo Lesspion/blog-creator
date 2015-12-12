@@ -1,0 +1,43 @@
+{% extends "../BaseFront/base.html" %}
+{% block title %}MyBlog{% endblock %}
+{% block rootclass %}blog{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="../assets/css/homeBlog.css">
+{% endblock %}
+{% block body %}
+  {% include '../BaseFront/header.html'%}
+	<section class=" section_container container">
+		<div class="main_section">
+			<!-- Swig faire une boucle pour les articles récents-->
+			<div class="news">
+				<header class='content_banner'>
+					<div>
+						<h3>DERNIERS ARTICLES</h3>
+					</div>
+				</header>
+					<div class="blog_post">
+						<!--Autre page twig à boucler-->
+            			{% include 'articles.html'%}
+					</div>
+			</div>
+			<div class="news"></div>
+			<div class="news"></div>
+		</div>
+		<aside class="page_side_bar home_sidebar">
+				{% include 'search.html'%}
+			<div id="postlist" class="widget_container">
+				<div class="widget_title">
+					<h4>ARTICLES POPULAIRES</h4>
+				</div>
+				<!--ARTICLE BOUCLE SWIG-->
+				<div>
+					<!--photo / titre
+								date
+						border_bottom-->
+				</div>
+			</div>
+		</aside>
+	</section>
+  <div class="clear"></div>
+{% include '../BaseFront/footer.html' %}
+{% endblock %}

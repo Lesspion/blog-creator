@@ -7,6 +7,8 @@ var subdomain  = require('subdomain');
 
 mongoose.connect('mongodb://localhost:27017/blogcreator');
 
+app.use('/assets', express.static(__dirname + '/assets'));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -22,7 +24,10 @@ app.use(subdomain({
 }));
 
 app.get('/subdomain/www', function (req, res) {
-	res.send('/')
+	res.render('index', {
+		pagename: "HomePage",
+		authors: ['Adeline', 'Chris']
+	});
 });
 
 app.get('/subdomain/:login', function (req, res) {
@@ -30,9 +35,51 @@ app.get('/subdomain/:login', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-	res.render('example', {
-		pagename: "Test example",
-		authors: ['Adeline', 'Chris', 'Ourdia', 'Nelly', "Soso"]
+	res.render('index', {
+		pagename: "HomePage",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/blog', function (req, res) {
+	res.render('Blog/home', {
+		pagename: "Home",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/blog/article', function (req, res) {
+	res.render('Blog/detailArticle', {
+		pagename: "detailArticle",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/profil', function (req, res) {
+	res.render('BaseBack/profil', {
+		pagename: "Profil",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/accueil', function (req, res) {
+	res.render('BaseBack/accueil', {
+		pagename: "Accueil log",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/create', function (req, res) {
+	res.render('BaseBack/create', {
+		pagename: "Article creation",
+		authors: ['Adeline', 'Chris']
+	});
+});
+
+app.get('/articles', function (req, res) {
+	res.render('BaseBack/articles', {
+		pagename: "Mes articles",
+		authors: ['Adeline', 'Chris']
 	});
 });
 

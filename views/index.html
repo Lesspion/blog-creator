@@ -1,0 +1,116 @@
+{% extends "BaseFront/base.html" %}
+{% block title %}BlogCreator{% endblock %}
+{% block rootclass %}home{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
+<link href="../assets/css/bootstrap.css" rel="stylesheet">
+<link href="../assets/css/grayscale.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div id="container">
+			<div class="top cl-effect-21 collapse navbar-collapse navbar-main-collapse">
+				<ul class="nav navbar-nav">
+					<li class="hidden">
+						<a href="#page-top"></a>
+					</li>
+					<li>
+						<a class="box_login page-scroll" href="#"><span>Connexion</span></a>
+					</li>
+					<li>
+						<a class="box_signUp page-scroll" href="#"><span>Inscription</span></a>
+					</li>
+					<li>
+                        <a class="page-scroll" href="#blogs">Blogs</a>
+                    </li>
+                    
+				</ul>
+			</div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+				<h1 class="logo">
+					<a class="navbar-brand page-scroll" href="#">
+						<img src="../assets/img/logo.png">
+					</a>
+				</h1>
+				<ul class="nav navbar-nav">
+				<li>
+                    <form action="#" method="post" id="search" class="left">
+					   <img src="assets/img/nav-search-loupe.png">
+					    <input name="search" type="search" placeholder="Rechercher des blogs" />
+					    <button type="submit" name="ok">ok</button> <!-- Redirect sur #blogs-->
+				    </form>
+                </li>
+                </ul>
+			</div>
+		</div>
+	</nav>
+		
+	<!-- main content -->
+	<div class="main">
+		<div class="intro-body">
+            <h2 class="brand-heading">Inscris-toi & Crée Ton Blog</h2>
+            <!--<p class="intro-text"><button class="button button--pipaluk button--inverted">Crée Ton Blog</button></p>-->
+            <div>
+	            <a href="#blogs" class="btn btn-circle page-scroll">
+	                <i class="fa fa-angle-double-down animated"></i>
+	            </a>
+            </div>
+            
+         </div>
+	</div>
+
+
+	<!--Vue des blogs-->
+	<section id="blogs" class="container content-section text-center">
+        <div class="row">
+        	<div>
+        		<h2>Blogs</h2>
+        	</div>
+            <div class="blogs line">
+            <!--BOUCLE-->
+                {% include 'BaseFront/blogsHome.html' %}
+    		</div>
+        </div>
+    </section>
+
+    <!-- Overlay -->
+    <div class="fade"></div>
+
+    <!-- Popin -->
+		<div class="morph-content login">
+			<div class="content-style-form content-style-form-1">
+				<span class="icon icon-close">Close</span>
+				<h2>Connexion</h2>
+				<form>
+					<p><label>Email</label><input type="text" /></p>
+					<p><label>Password</label><input type="password" /></p>
+					<p><button type="submit">Login</button></p>
+				</form>
+			</div>
+		</div>
+		<div class="morph-content sign">
+			<div class="content-style-form content-style-form-2">
+				<span class="icon icon-close">Close</span>
+				<h2>Inscription</h2>
+				<form>
+					<p><label>Pseudo</label><input type="text" /></p>
+					<p><label>Email</label><input type="text" /></p>
+					<p><label>Password</label><input type="password" /></p>
+					<p><label>Repeat Password</label><input type="password" /></p>
+					<p><button type="submit">Sign Up</button></p>
+				</form>
+			</div>
+		</div>
+{% endblock %}
+{% block javascripts%}
+	{% parent %}
+		<script type="text/javascript" src="../assets/js/home.js"></script>
+		<script type="text/javascript" src=".../assets/js/bootstrap.min.js"></script>
+ 		<script type="text/javascript" src="../assets/js/grayscale.js"></script> 
+ 		<script type="text/javascript"src="../assets/js/jquery.easing.min.js"></script>
+{% endblock %}
+</html>

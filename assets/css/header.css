@@ -1,0 +1,150 @@
+
+::-webkit-input-placeholder { font-size: 0.8em; }
+::-moz-placeholder { font-size: 0.8em; } /* firefox 19+ */
+:-ms-input-placeholder { font-size: 0.8em; } /* ie */
+input:-moz-placeholder { font-size: 0.8em; }
+
+.back {
+    background-color: #FFF;
+}
+nav {
+    background-color: #EEDDAF !important;
+    padding: 10px 0px;
+    letter-spacing: 1px; 
+    position: relative !important;
+}
+
+/*search*/
+
+.nav form {
+    position: relative;
+    float: left;
+}
+.nav img {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+}
+.nav input {
+    width: 80%;
+    height: 36px;
+    line-height: 2.5em;
+    padding: 0px 0.5em 0px 2em;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
+    float: left;
+    color: #FFF;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 0.66);
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease 0s;
+}
+.nav form input:focus {
+    outline: medium none;
+    border: 1px solid #686868;
+    background: #575050 none repeat scroll 0% 0%;
+}
+.nav form input:hover {
+    border: 1px solid rgba(98, 98, 98, 0.7);
+    
+    background: rgba(158, 142, 129, 0.77) none repeat scroll 0% 0%;
+}
+nav form button {
+    display: block;
+    background: #575050 none repeat scroll 0% 0%;
+    border: medium none;
+    color: #F7F7F7;
+    text-transform: uppercase;
+    padding: 0px 0.5em;
+    height: 2.55em;
+    font-size: inherit;
+}
+
+/* postArticle & menu */
+
+.account {
+    right: 0px;
+    float: left;
+    position: absolute;
+    min-width: 40%;
+    padding-left: 63px;
+}
+.account p {
+    height: 80px;
+    float: left;
+    font-size: 20px;
+    line-height: 1.6;
+}
+.account p a {
+    display: inline-block;
+    position: relative;
+    background: #575050 url("../img/plus.png") no-repeat scroll 1em 0.7em;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 0.5em;
+    padding: 0.9em 1.8em 0.8em 3.5em;
+    text-decoration: none;
+    border-radius: 4em;
+    transition: all 0.3s ease 0s;
+}
+.account .photo {
+    width: 30%;
+    float: left;
+    position: relative;
+    margin: 0em 1em 0px 1.4em;
+}
+.account .photo img {
+    position: relative;
+    float: left;
+}
+.account .photo .photo-username {
+    float: left;
+    color: #FFF;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#menu {
+    position: absolute;
+    overflow: visible;
+    top: 45px;
+    right: 243px;
+    padding: 0px;
+    z-index: 11;
+    height: 118px;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.33);
+    opacity: 1;
+    display: none;
+    
+}
+#menu ul {
+    width: 100%;
+    height: 118px;
+    padding: 0px;
+    margin: 0px;
+    border: medium none;
+    
+}
+#menu li {
+    border-bottom: 1px solid #EEDDAF;
+    background-color: #575050 ;
+    list-style: outside none none;
+    text-align: left;
+    width: 100% !important;
+    transition: all 0.3s ease 0s;
+    padding: 9px;
+}
+#container h1 {
+    width: 24%;
+    margin: auto auto auto 19%;
+    float: left;   
+}
+#container h1 img {
+    width: 20%;
+}
