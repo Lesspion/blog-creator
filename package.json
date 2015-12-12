@@ -4,8 +4,8 @@
   "description": "blog creator",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js",
-    "start": "node server.js"
+    "test": "nodemon host.js",
+    "start": "node host.js"
   },
   "repository": {
     "type": "git",
