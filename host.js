@@ -1,16 +1,12 @@
-var port = process.env.PORT || 8000;
+var port = 80;
 var express    = require('express');
 var app        = express();
 var server = require('./server');
 var vhost = require('vhost');
 
-console.log(server);
-//app.use(vhost('*.example.prod', server)); // Serves all subdomains via Redirect app
-app.use(vhost('blog-creator.prod', server)); // Serves top level domain via Main server app
-
+app.use(vhost('blog-creator.prod', server));
+app.use(vhost('*.blog-creator.prod', server));
 //app.use(evh.vhost(app.enabled('trusted proxy')));
-app.listen(80);
-
-//evh.register('example.prod', server.app);
+app.listen(port);
 
 console.log('Magic happens on port ' + port);
