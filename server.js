@@ -3,9 +3,9 @@ var app        = express();
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var swig 	   = require('swig');
-var forceDomain = require('forcedomain');
+var subdomain  = require('subdomain');
 
-mongoose.connect('mongodb://localhost:27017/blog');
+mongoose.connect('mongodb://localhost:27017/blogcreator');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,10 +17,17 @@ app.set('views', __dirname + '/views');
 app.set('view cache', false);
 swig.setDefaults({ cache: false });
 
+app.use(subdomain({
+	base: 'blog-creator.prod'
+}));
 
-var port = process.env.PORT || 3000;
+app.get('/subdomain/www', function (req, res) {
+	res.send('/')
+});
 
-//app.use('/', );
+app.get('/subdomain/:login', function (req, res) {
+	res.end(req.headers.host);
+});
 
 app.get('/', function (req, res) {
 	res.render('example', {
@@ -28,17 +35,5 @@ app.get('/', function (req, res) {
 		authors: ['Adeline', 'Chris', 'Ourdia', 'Nelly', "Soso"]
 	});
 });
-
-app.get('/test', function (req, res) {
-	res.send('boulou');
-});
-
-// app.use(forceDomain({
-//   hostname: 'www.boulouhidden.prod',
-//   port: '3000'
-// }));
-
-//app.listen(port);
-console.log('Magic happens on port ' + port);
 
 module.exports = app;
