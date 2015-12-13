@@ -6,10 +6,11 @@ var UserSchema   = new Schema({
     lastname: String,
     email: String,
     password: String,
-	login: String,
+	pseudo: String,
 	birthday: Date,
     about_me: String,
-	friend: [{type: Schema.ObjectId, ref: 'User'}]
+	friend: [{type: Schema.ObjectId, ref: 'User'}],
+    registration_date: String
 });
 
 module.exports = mongoose.model('User', UserSchema);
