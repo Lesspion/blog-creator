@@ -4,10 +4,14 @@ var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 var swig 	   = require('swig');
 var subdomain  = require('subdomain');
+var userRoute  = require('./routes/user-route');
+var session = require('express-session');
 
 mongoose.connect('mongodb://localhost:27017/blogcreator');
 
 app.use('/assets', express.static(__dirname + '/assets'));
+
+app.use(session({secret: 'javascriptIsAwesome'}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -40,6 +44,8 @@ app.get('/', function (req, res) {
 		authors: ['Adeline', 'Chris']
 	});
 });
+
+app.use('/', userRoute);
 
 app.get('/blog', function (req, res) {
 	res.render('Blog/home', {
