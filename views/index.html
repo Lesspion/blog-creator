@@ -7,7 +7,17 @@
 <link href="../assets/css/grayscale.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
-
+	{% if error %}
+		{{message}}
+		<script type="text/javascript">
+			NotifierjsConfig.defaultTimeOut = 250;
+  			NotifierjsConfig.position = ["bottom", "right"];
+			Notifier.error('{{message}}');
+		</script>
+	{% endif %}
+	{% if session %}
+		{{session.pseudo}}
+	{% endif %}
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
 		<div id="container">
 			<div class="top cl-effect-21 collapse navbar-collapse navbar-main-collapse">
@@ -85,10 +95,10 @@
 			<div class="content-style-form content-style-form-1">
 				<span class="icon icon-close">Close</span>
 				<h2>Connexion</h2>
-				<form>
-					<p><label>Email</label><input type="text" /></p>
-					<p><label>Password</label><input type="password" /></p>
-					<p><button type="submit">Login</button></p>
+				<form method="post" action="/login">
+					<p><label>Email</label><input type="text" name="email"/></p>
+					<p><label>Password</label><input type="password" name="password"/></p>
+					<p><button type="submit" name="submit">Login</button></p>
 				</form>
 			</div>
 		</div>
@@ -96,12 +106,12 @@
 			<div class="content-style-form content-style-form-2">
 				<span class="icon icon-close">Close</span>
 				<h2>Inscription</h2>
-				<form>
-					<p><label>Pseudo</label><input type="text" /></p>
-					<p><label>Email</label><input type="text" /></p>
-					<p><label>Password</label><input type="password" /></p>
-					<p><label>Repeat Password</label><input type="password" /></p>
-					<p><button type="submit">Sign Up</button></p>
+				<form  method="post" action="/signup">
+					<p><label>Pseudo</label><input type="text" name="pseudo"/></p>
+					<p><label>Email</label><input type="text" name="email"/></p>
+					<p><label>Password</label><input name="password" type="password" /></p>
+					<p><label>Repeat Password</label><input name="password2" type="password" /></p>
+					<p><button type="submit" name="submit">Sign Up</button></p>
 				</form>
 			</div>
 		</div>
@@ -111,6 +121,6 @@
 		<script type="text/javascript" src="../assets/js/home.js"></script>
 		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
  		<script type="text/javascript" src="../assets/js/grayscale.js"></script> 
- 		<script type="text/javascript"src="../assets/js/jquery.easing.min.js"></script>
+ 		<script type="text/javascript" src="../assets/js/jquery.easing.min.js"></script>
 {% endblock %}
 </html>
