@@ -7,7 +7,7 @@ app.post('/signup', function (req, res) {
 	var user = new User();	
 	
 	if (typeof req.body.email === "undefined" || typeof req.body.password === "undefined" || typeof req.body.pseudo === "undefined") {
-		res.json({error: true, message: "Un champs est manquant"});
+		res.send({error: true, message: "Un champs est manquant"});
 		return;
 	} else {
 		User.findOne({email: req.body.email}, function (err, finder) {
