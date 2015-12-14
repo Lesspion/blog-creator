@@ -4,7 +4,7 @@ body {
 }
 #container h1 {
 	width: 41%;
-	margin: auto auto auto 19%;
+	margin: auto auto auto 25%;
 	float: left;
 }
 ::-webkit-input-placeholder { font-size: 0.8em; }

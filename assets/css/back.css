@@ -8,8 +8,8 @@
 	/*background: url('../img/wall-test.jpg') no-repeat center bottom;*/
 	margin: 60px auto auto;
 	width: 960px;
-	border-left: 1px solid #EEDDAF;
-	border-right: 1px solid #EEDDAF;
+	border-left: 1px solid rgb(239, 230, 210);;
+	border-right: 1px solid rgb(239, 230, 210);;
 	padding: 45px;
 }
 .main img {
@@ -222,7 +222,7 @@ h2 {
 .articles .meta_info {
     line-height: 18px;
     float: left;
-    margin-right: 28px;
+    margin-right: 13px;
 }
 .articles .comment {
 	font-size: 12px;
@@ -249,7 +249,7 @@ h2 {
 }
 .edit {
 	float: right;
-	padding: 30px;
+	padding: 42px;
 }
 .edit form {
 	display: inline;
