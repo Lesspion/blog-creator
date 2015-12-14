@@ -88,6 +88,12 @@ app.post('/login', function (req, res) {
 	}
 });
 
+app.get('/logout', function (req, res) {
+	req.session = [];
+	req.session.connected = false;
+	res.redirect('/');
+});
+
 app.put('/user/:id_user', function (req, res) {
 	User.findOne({
 		_id: req.params.id_user
