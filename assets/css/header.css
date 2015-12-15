@@ -28,7 +28,6 @@ nav {
 .nav input {
     width: 80%;
     height: 36px;
-    line-height: 2.5em;
     padding: 0px 0.5em 0px 2em;
     font-size: 1.5em;
     background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
@@ -37,10 +36,6 @@ nav {
     border-width: 1px 0px 1px 1px;
     border-style: solid;
     border-color: rgba(204, 204, 204, 0.66);
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
     border-image: none;
     box-sizing: border-box;
     transition: all 0.3s ease 0s;
@@ -72,7 +67,7 @@ nav form button {
     right: 0px;
     float: left;
     position: absolute;
-    min-width: 20%;;
+    min-width: 18%;
     
 }
 .account p {
