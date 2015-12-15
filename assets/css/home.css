@@ -3,7 +3,7 @@ body {
 	background-position: 100%;
 }
 #container h1 {
-	width: 41%;
+	width: 35%;;
 	margin: auto auto auto 25%;
 	float: left;
 }
@@ -277,7 +277,7 @@ form p {
 }
 .content-style-form input[type="text"], .content-style-form input[type="password"] {
 	padding: 5px;
-	width: 93%;
+	width: 100%;
 	border: 2px solid #EBD3BD;
 	background: transparent none repeat scroll 0% 0%;
 	color: #B09A86;
@@ -287,7 +287,7 @@ form p {
 .content-style-form button {
     display: block;
 	margin-top: 2.5em;
-	width: 93%;
+	width: 100%;
 	border: medium none;
 	background: #E75854 none repeat scroll 0% 0%;
 	color: #F9F6E5;
@@ -357,4 +357,20 @@ form p {
 }
 .blogs-col img{
 	float: left;
+}
+
+/*MEDIA QUERI*/
+
+@media(max-width:1800px) {
+    .nav form {
+    	margin-left: 34px;
+		width: 35%;
+    }
+    .navbar-nav>li {
+    	float: none !important;
+    }
+    #container h1 {
+    	margin: auto auto auto 3%;
+    	width: 37%;
+    }
 }

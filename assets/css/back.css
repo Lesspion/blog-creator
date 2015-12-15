@@ -23,7 +23,6 @@
 }
 .main h3 {
 	color: #88A08A;
-	margin-left: 10px;
 	margin-top: 0px;
 }
 .main > div {
@@ -264,9 +263,14 @@ input[type="submit"] {
 	margin-left: 25px;
 	color: white;
 	background-color: #575050;
+	float: left;
+	height: 1.5em;
 }
 .edit button:hover {
 	transform: scale(1.5);
+}
+.edit a {
+	float: left;
 }
 .edit a:hover{
 	text-decoration: underline;
@@ -333,14 +337,16 @@ form button {
 	height: 1.5em;
 	font-size: inherit;
 }
-input {
+#msg{
+	float: left;
+}
+input[type="text"] {
     width: 91%;
     height: 36px;
     line-height: 2.5em;
     padding: 0px 0.5em 0px 2em;
     font-size: 1.5em;
     background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
-    float: left;
     color: #FFF;
     border-width: 1px 0px 1px 1px;
     border-style: solid;
@@ -364,4 +370,26 @@ input {
 .main .user p {
 	font-size: 12px;
 	color: #B2B2B2;
+	padding: 44px 0px 0px 0px;
+}
+.main .user h3 {
+	padding-left: 116px;
+}
+
+/*MEDIA QUERI*/
+
+@media(max-width:1500px) {
+    .main {
+    	margin: 115px auto auto;
+    }
+    input {
+    	width: 88%;
+    }
+    .button {
+    	padding: 2.0em 2em;
+    }
+    .articles .content_post{
+    	margin-left: 299px;
+    	float: none;
+    }
 }

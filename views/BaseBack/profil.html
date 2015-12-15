@@ -2,6 +2,7 @@
 {% block title %}BlogCreator{% endblock %}
 {% block rootclass %}profil{% endblock %}
 {% block stylesheets %}
+
 <link href="../assets/css/bootstrap.css" rel="stylesheet">
 <link href="../assets/css/header.css" rel="stylesheet">
 <link href="../assets/css/grayscale.css" rel="stylesheet">
@@ -16,11 +17,11 @@
 			<h3>Lili</h3>
 			<p>Changer sa photo de profil</p>
 		</div>
-		<a href="/create"><button class="button button--pipaluk button--inverted clear">Crée Un Blog</button></a>
+		<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
 		<!--MESSAGERIE-->
 		<div class="messagerie">
 			<form action="#" method="post" id="search" class="left">
-			   <input name="search" type="search" placeholder="Laissez un message à ..." />
+			   <input name="search" id="msg" type="text" placeholder="Laissez un message à ..." />
 			   <button type="submit" name="send">Envoyer</button>
 			</form>
 			<div class="overflow">
