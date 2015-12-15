@@ -6,7 +6,7 @@ var swig 	   = require('swig');
 var subdomain  = require('subdomain');
 var userRoute  = require('./routes/user-route');
 var session    = require('express-session');
-var fetchBlog  = require('personal_modules/Blog');
+var fetchBlog  = require('./personal_modules/Blog');
 
 mongoose.connect('mongodb://localhost:27017/blogcreator');
 
@@ -29,7 +29,7 @@ app.use(subdomain({
 }));
 
 app.get('/subdomain/www', function (req, res) {
-	req.session = [];
+	req.session.touch();
 	req.session.connected = false;
 	
 	fetchBlog(function (blogs) {
@@ -46,7 +46,7 @@ app.get('/subdomain/:login', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-	req.session = [];
+	req.session.touch();
 	req.session.connected = false;
 	res.render('index', {
 		pagename: "HomePage",
