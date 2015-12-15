@@ -210,7 +210,6 @@ form {
 }
 .container.footer {
     border-top: 2px solid #E8E8E8;
-    padding-top: 20px;
     margin-top: 10px;
     border-bottom: 1px solid #E8E8E8;
     padding-bottom: 20px;
@@ -302,3 +301,21 @@ textarea {
 #profil {
     height: 185px;
 }
+
+
+/*MEDIA QUERIE*/
+
+
+@media(max-width:1500px) {
+    .blog, .details {
+        width: 100%;
+    }
+    .latest-post{
+        width: 350px;
+    }
+    .main_section {
+        width: 399px;
+    }
+    .details .img {
+        width: 399px;
+    }
