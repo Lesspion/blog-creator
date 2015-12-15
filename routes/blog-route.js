@@ -1,207 +1,78 @@
 var express 	= require('express');
 var app 		= express();
-var md5 		= require('md5');
 var User 		= require('../models/User');
+var Blog 		= require('../models/Blog');
 
-app.post('/signup', function (req, res) {
-	var user = new User();	
-	
-	if (typeof req.body.email === "undefined" || typeof req.body.password === "undefined" || typeof req.body.pseudo === "undefined") {
-		res.send({error: true, message: "Un champs est manquant"});
-		return;
-	} else {
-		User.findOne({email: req.body.email}, function (err, finder) {
-			if (!finder) {
-				user.pseudo = req.body.pseudo;
-				user.email = req.body.email;
-				user.password = md5(req.body.password);
-				var today = new Date();
-				var dd = today.getDate();
-				var mm = today.getMonth() + 1;
-				var yyyy = today.getFullYear();
-			    if (dd < 10) {
-			        dd = '0' + dd;
-			    } 
-			    if (mm < 10) {
-			        mm = '0' + mm;
-			    }
-			    var today = dd + '/' + mm + '/' + yyyy;
-				user.registration_date = today;
-
-				user.save(function (err) {
-					if (err)
-						res.send(err);
-					req.session.id = user._id;
-					req.session.pseudo = user.pseudo;
-					res.render('index', {
-						pagename: "HomePage",
-						authors: ['Adeline', 'Chris'],
-						connected: true,
-						session: req.session
-					});
-				});
-			} else {
-				res.render('index', {
-					pagename: "HomePage",
-					authors: ['Adeline', 'Chris'],
-					error: true,
-					message: "Email is already taken"
-				});
-			}
+app.post('/create', function (req, res) {
+	if (req.body.blog_name != "undefined" && req.body.category !== "undefined" && req.session.id) {
+		var blog = new Blog();
+		blog.id_user = req.session.id;
+		blog.name = req.body.blog_name;
+		blog.category = req.body.category;
+		blog.save(function (err) {
+			if (err)
+				res.end(err);
+			res.render('BaseBack/profil', {
+				pagename: "Profil",
+				authors: ['Adeline', 'Chris'],
+				session: req.session,
+				success: "Blog created successfully"
+			});
 		});
-	}
-});
-
-app.post('/login', function (req, res) {
-	if (!req.body.email || !req.body.password) {
-		res.render('index', {
-			pagename: "HomePage",
+	} else {
+		res.render('BaseBack/create', {
+			pagename: "Article creation",
 			authors: ['Adeline', 'Chris'],
 			error: true,
-			message: "Email or password field is missing"
-		});
-	} else {
-		User.findOne({email: req.body.email, password: md5(req.body.password)}, function (err, user) {
-			if (user) {
-				req.session.id = user._id;
-				req.session.pseudo = user.pseudo;
-				if (user.firstname) {
-					req.session.firstname = user.firstname;
-				}
-				if (user.lastname) {
-					req.session.lastname = user.lastname;
-				}
-				res.render('index', {
-					pagename: "HomePage",
-					authors: ['Adeline', 'Chris'],
-					session: req.session
-				});
-			} else {
-				res.render('index', {
-					pagename: "HomePage",
-					authors: ['Adeline', 'Chris'],
-					error: true,
-					message: "Wrong email or password"
-				});
-			}
+			message: "Field blog name and category are required",
+			session: req.session
 		});
 	}
 });
 
-app.get('/logout', function (req, res) {
-	req.session = [];
-	req.session.connected = false;
-	res.redirect('/');
-});
-
-app.put('/user/:id_user', function (req, res) {
-	User.findOne({
-		_id: req.params.id_user
-	}, function (err, user) {
-		if (err)
-			res.send(err);
-
-		if (req.body.affinities) {
-			for (var i = 0; i < req.body.affinities.length; i++) {
-				user.affinities.push(req.body.affinities[i]);
-			}
-		}
-
-		if (req.body.skills) {
-			for (var i = 0; i < req.body.skills.length; i++) {
-				user.skills.push(req.body.skills[i]);
-			}
-		}
-
-		if (req.body.about_me) {
-			user.about_me = req.body.about_me;
-		}
-
-		if (req.body.lat) {
-			user.lat = req.body.lat;
-		}
-
-		if (req.body.lng) {
-			user.lng = req.body.lng;
-		}
-
-		if (req.body.job_title) {
-			user.job_title = req.body.job_title;
-		}
-
-		if (req.body.phone) {
-			user.phone = req.body.phone;
-		}
-
-		user.save(function (err2) {
-			if (err2)
-				res.send(err2);
-			res.json({message: "user updated !"});
+app.get('/edit/:id_blog', function (req, res) {
+	Blog.findOne({_id: req.params.id_blog}, function (err, blogy) {
+		res.render('BaseBack/create', {
+			pagename: "Article creation",
+			authors: ['Adeline', 'Chris'],
+			session: req.session,
+			currentBlog: blogy
 		});
 	});
 });
 
-app.delete('/remove/:id_user', function (req, res) {
-	User.remove({
-		_id: req.params.id_user
-	}, function (err, user) {
-		if (err)
-			res.send(err);
-		res.json({error: false, message: "User deleted !"});
-	});
-});
-
-
-app.get('/user/:id_user', function (req, res) {
-	User.findOne({_id: req.params.id_user}).populate('skills').populate('affinities')
-	.exec(function (err, user) {
-		res.json({error: false, firstname: user.firstname, lastname: user.lastname, email: user.email, id: user._id, skills: user.skills, affinities: user.affinities});
-	});
-});
-
-app.get('/test/:id_user', function (req, res) {
-	User.findOne({
-		_id: req.params.id_user
-	}).populate('skills')
-	.exec(function (err, user) {
-		if (err)
-			res.send(err);
-		console.log(user.skills);
-		res.json({msg: true});
-	})
-});
-
-app.post('/user/profile-picture/:id_user', function (req, res) {
-	User.findOne({
-		_id: req.params.id_user
-	}, function (err, user) {
-		if (err)
-			res.send(err);
-		var pic = req.body.picture;
-		var format = req.body.format;
-		if (req.body.picture === "undefined" || req.body.picture === "" || req.body.picture === null) {
-			res.json({error: true, message: "Put a valid image"});
-		} else if (req.body.format === "undefined" || req.body.format === "" || req.body.format === null) {
-			res.json({error: true, message: "Put a valid image with a correct format"});
-		} else {
-
-			if (format == "jpg") {
-				var base64Data = pic.replace(/^data:image\/jpg;base64,/, "");
-			} else if (format == "png") {
-				var base64Data = pic.replace(/^data:image\/png;base64,/, "");
-			} else {
-				var base64Data = pic.replace(/^data:image\/jpeg;base64,/, "");
-			}
-			
-			//if (require('fs').)
-
-
-			require("fs").writeFile("profile_picture/" + req.params.id_user/* + "." + format*/, base64Data, 'base64', function(err2) {
-	  			if (err2)
-	  				console.log(err2);
-	  			res.json({error: false, message: "The picture was uloaded with success!"});
-			});
+app.post('/edit/:id_blog', function (req,res) {
+	Blog.findOne({_id: req.params.id_blog}, function (err, blogy) {
+		if (req.body.category) {
+			blogy.category = req.body.category;
 		}
+		if (req.body.nameBlog) {
+			blogy.name = req.body.nameBlog;
+		}
+		blogy.save(function (err) {
+			if (err)
+			res.end(err);
+			res.render('BaseBack/create', {
+				pagename: "Article creation",
+				authors: ['Adeline', 'Chris'],
+				session: req.session,
+				currentBlog: blogy,
+				success: "Blog successfully updated"
+			});
+		});
+	});
+});
+
+app.delete('/delete/:id_blog', function (req, res) {
+	Blog.findOne({_id: req.params.id_blog}, function(err, removed) {
+		removed.remove(function (err) {
+			res.render('BaseBack/profil', {
+				pagename: "Article creation",
+				authors: ['Adeline', 'Chris'],
+				session: req.session,
+				success: "Blog successfully deleted"
+			});
+		});
 	});
 });
 
