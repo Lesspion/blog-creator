@@ -148,3 +148,35 @@ nav form button {
 #container h1 img {
     width: 10%;
 }
+
+/*MEDIA QUERIE*/
+
+@media(max-width:1500px) {
+    .account .photo {
+        float: none;
+    }
+    #container h1 {
+        margin: auto auto auto 1%;
+        float: none;
+        width: 20%;
+    }
+    #container h1 img {
+        width: 33%;
+    }
+    .navbar-nav > li {
+        margin-left: 180px;
+    }
+    .navbar-nav{
+        width: 100%;
+        float: right;
+    }
+    #blogs h2 {
+        background-color: #000;
+    }
+    .edit a {
+        float: left;
+    }
+    .edit form button {
+        float: left;
+    }
+}
