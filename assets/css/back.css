@@ -10,10 +10,14 @@
 .main {
 	/*background: url('../img/wall-test.jpg') no-repeat center bottom;*/
 	margin: 60px auto auto;
-	width: 960px;
+	width: 100%;
 	border-left: 1px solid rgb(239, 230, 210);;
 	border-right: 1px solid rgb(239, 230, 210);;
 	padding: 45px;
+}
+.wrap {
+	width: 960px !important;
+	margin: auto;
 }
 .main img {
 	float: left;
@@ -173,6 +177,7 @@ input[type = 'text']{
 }
 .create .mce-tinymce {
 	margin-bottom: 35px;
+	width: 100% !important;
 }
 .create h3 {
 	margin:0;
@@ -305,8 +310,7 @@ input[type="submit"] {
 }
 .profil .message {
 	margin: 55px auto auto;
-	width: 100%;
-
+	width: 90%;
 }
 .overflow {
 	overflow-y: auto;
@@ -348,14 +352,6 @@ input[type="text"] {
     font-size: 1.5em;
     background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
     color: #FFF;
-    border-width: 1px 0px 1px 1px;
-    border-style: solid;
-    border-color: rgba(204, 204, 204, 0.66);
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image: none;
     box-sizing: border-box;
     transition: all 0.3s ease 0s;
 }
@@ -382,6 +378,9 @@ input[type="text"] {
     .main {
     	margin: 115px auto auto;
     }
+    .wrap{
+    	width: 700px !important;
+    }
     input {
     	width: 88%;
     }
@@ -391,5 +390,8 @@ input[type="text"] {
     .articles .content_post{
     	margin-left: 299px;
     	float: none;
+    }
+    input[type=submit] {
+    	width: 30%;
     }
 }
