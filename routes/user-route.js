@@ -33,12 +33,13 @@ app.post('/signup', function (req, res) {
 						res.send(err);
 					req.session.id = user._id;
 					req.session.pseudo = user.pseudo;
-					res.render('index', {
-						pagename: "HomePage",
-						authors: ['Adeline', 'Chris'],
-						connected: true,
-						session: req.session
-					});
+					// res.render('index', {
+					// 	pagename: "HomePage",
+					// 	authors: ['Adeline', 'Chris'],
+					// 	connected: true,
+					// 	session: req.session
+					// });
+					res.redirect('/accueil');
 				});
 			} else {
 				res.render('index', {
@@ -71,11 +72,12 @@ app.post('/login', function (req, res) {
 				if (user.lastname) {
 					req.session.lastname = user.lastname;
 				}
-				res.render('index', {
-					pagename: "HomePage",
-					authors: ['Adeline', 'Chris'],
-					session: req.session
-				});
+				// res.render('index', {
+				// 	pagename: "HomePage",
+				// 	authors: ['Adeline', 'Chris'],
+				// 	session: req.session
+				// });
+				res.redirect('/accueil'); 
 			} else {
 				res.render('index', {
 					pagename: "HomePage",
