@@ -29,10 +29,8 @@ app.use(subdomain({
 }));
 
 app.get('/subdomain/www', function (req, res) {
-	req.session.touch();
-	req.session.connected = false;
-	
 	fetchBlog(function (blogs) {
+		console.log(blogs);
 		res.render('index', {
 			pagename: "HomePage",
 			authors: ['Adeline', 'Chris'],
@@ -48,9 +46,13 @@ app.get('/subdomain/:login', function (req, res) {
 app.get('/', function (req, res) {
 	req.session.touch();
 	req.session.connected = false;
-	res.render('index', {
-		pagename: "HomePage",
-		authors: ['Adeline', 'Chris']
+	fetchBlog(function (blogs) {
+		console.log(blogs);
+		res.render('index', {
+			pagename: "HomePage",
+			authors: ['Adeline', 'Chris'],
+			blogs: blogs
+		});
 	});
 });
 
