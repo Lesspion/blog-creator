@@ -4201,6 +4201,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-nav > li {
     float: left;
+    padding: 6px;
   }
   .navbar-nav > li > a {
     padding-top: 15px;

@@ -288,3 +288,17 @@ textarea {
     width: 82%;
     background-color: #E9E9E9;
 }
+/*---------------- Profil ---------------------------*/
+
+.photo img {
+    min-width: 30%;
+    height: 100px;
+    float: left;
+}
+.photo-username {
+    float: left;
+    margin-left: 10px;
+}
+#profil {
+    height: 185px;
+}

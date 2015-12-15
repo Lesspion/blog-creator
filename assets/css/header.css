@@ -8,7 +8,7 @@ input:-moz-placeholder { font-size: 0.8em; }
     background-color: #FFF;
 }
 nav {
-    background-color: #EEDDAF !important;
+    background-color: #EFE6D2!important;
     padding: 10px 0px;
     letter-spacing: 1px; 
     position: relative !important;
@@ -72,13 +72,13 @@ nav form button {
     right: 0px;
     float: left;
     position: absolute;
-    min-width: 40%;
-    padding-left: 63px;
+    min-width: 20%;;
+    
 }
 .account p {
     height: 80px;
     float: left;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1.6;
 }
 .account p a {
@@ -113,7 +113,7 @@ nav form button {
     position: absolute;
     overflow: visible;
     top: 45px;
-    right: 243px;
+    right: 28px;
     padding: 0px;
     z-index: 11;
     height: 118px;
@@ -141,10 +141,10 @@ nav form button {
     padding: 9px;
 }
 #container h1 {
-    width: 24%;
-    margin: auto auto auto 19%;
+    width: 40%;
+    margin: auto auto auto 25%;
     float: left;   
 }
 #container h1 img {
-    width: 20%;
+    width: 10%;
 }
