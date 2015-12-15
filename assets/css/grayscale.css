@@ -44,7 +44,8 @@ ul {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
-    background-color: rgb(239, 230, 210);;
+    background-color: rgb(239, 230, 210);
+    position: fixed;
 }
 
 .navbar-custom .navbar-brand {
