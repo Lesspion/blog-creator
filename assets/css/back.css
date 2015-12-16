@@ -198,7 +198,7 @@ input[type="submit"] {
 .blog_post {
 	margin-top: 50px;
 }
-.wrap div:nth-child(2) {
+.articles .wrap div:nth-child(2) {
 	margin-top: 50px;
 }
 /*---------------------------TOUS LES ARTICLES-------------------- */
@@ -349,11 +349,11 @@ form button {
 #msg{
 	float: left;
 }
-input[type="text"] {
+.profil input[type="text"],.create input[type="text"] {
     width: 91%;
     height: 36px;
     line-height: 2.5em;
-    padding: 0px 0.5em 0px 2em;
+    /*padding: 0px 0.5em 0px 2em;*/
     font-size: 1.5em;
     background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
     color: #000;
