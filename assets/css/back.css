@@ -195,7 +195,12 @@ input[type="submit"] {
 	color: #FFF;
 	float: right;
 }
-
+.blog_post {
+	margin-top: 50px;
+}
+.wrap div:nth-child(2) {
+	margin-top: 50px;
+}
 /*---------------------------TOUS LES ARTICLES-------------------- */
 
 .articles .latest-post {
@@ -351,7 +356,7 @@ input[type="text"] {
     padding: 0px 0.5em 0px 2em;
     font-size: 1.5em;
     background: rgba(255, 255, 255, 0.16) none repeat scroll 0% 0%;
-    color: #FFF;
+    color: #000;
     box-sizing: border-box;
     transition: all 0.3s ease 0s;
 }
@@ -372,14 +377,14 @@ input[type="text"] {
 	padding-left: 116px;
 }
 
-/*MEDIA QUERI*/
+/*MEDIA QUERIE*/
 
 @media(max-width:1500px) {
     .main {
     	margin: 115px auto auto;
     }
     .wrap{
-    	width: 700px !important;
+    	width: 760px !important;
     }
     input {
     	width: 88%;

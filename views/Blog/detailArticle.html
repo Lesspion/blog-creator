@@ -8,7 +8,6 @@
   {% include '../BaseFront/header.html'%}
 	<section class=" section_container container">
 		<div class="main_section">
-			<!-- Swig faire une boucle pour les articles récents-->
 			<div class="news">
 				<header class='content_banner'>
 					<div>
@@ -16,9 +15,25 @@
 					</div>
 				</header>
 				<div class="blog_post">
-					
-        			{% include 'comment.html'%}
-        			
+					<div class="post-body">
+						<div class="entry_content w250">
+					        <p>{{ article.content }}</p>
+					        <div class=" ma mb15 w630 img"><img src="{{ article.picture }}"></div>
+					        
+					        <div class="post_meta">
+					            <div class="meta_info">
+					                <span class="date">{{ article.createdAt}}</span>
+					            </div>
+					            <div class="meta_info">
+					        <span class="comment">{{ article.nbComments }}</span>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="clear"></div>
+						{% for comment in comments %}
+		        			{% include 'comment.html'%}
+						{% endfor%}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,47 +1,31 @@
-<div class="post-body">
-    <div class="entry_content w250">
-        <p>sdgjhezlvinvr nbrjtb,fkj lkrjety,bjr kljtrhkjejhtrjytj rtuye u ye'y-yertt hdfjj</p>
-        <div class=" ma mb15 w630 img"><img src="../assets/img/article_test.jpg"></div>
-        
-        <div class="post_meta">
-            <div class="meta_info">
-                <span class="date">17 novembre 2015 - 18h38 min<!--{{article.date}}--></span>
+<div class="comment_box">
+    <div class="comment_header">
+        <h4>COMMENTAIRES</h4>
+    </div>
+    <div class="comment_users">
+        <img src="../assets/img/test-user.jpeg">
+        <div class="content_post w250">
+            <p><a href="">{{ comment.picture }}</a></p>
+            <div class="post_desc">
+                <p>{{ comment.content}}</p>
             </div>
-            <div class="meta_info">
-        <span class="comment">2<!--{{ article.nbComments }}--></span>
+            <div class="post_meta">
+                <div class="meta_info">
+                    <span class="date">{{ comment.createdAt}}</span>
+                </div>
+                <div>
+                    <form>
+                        <button type="submit">X</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <div class="clear"></div>
-    <div class="comment_box">
-        <div class="comment_header">
-            <h4>COMMENTAIRES</h4>
-        </div>
-        <div class="comment_users">
-            <img src="../assets/img/test-user.jpeg">
-            <div class="content_post w250">
-                <p><a href="">Blala</a></p>
-                <div class="post_desc">
-                    <p>Trouver des gens de moins de 200 likes étaient assez difficile. Moi j’avais plutôt opté pour des blogs assez récents quand même que j’apprécie et qui mérite de se faire connaître davantage. Super sympa tes réponses en passant. Effectivement, la transition des tongs aux talons hauts risquent d’être difficiles hehe..l’inclinaison du pied est légèrement différente. :) Bonne continuation dans ton voyage et pour te rassurer, malgré la vigilance qui doit être toujours de mise quand même, les gens sont super sympas en Amérique latine. Les règles de sécurité de base demeure, mais il ne faut pas devenir parano non plus. À plus!</p>
-                </div>
-                <div class="post_meta">
-                    <div class="meta_info">
-                        <span class="date">17 novembre 2015 - 18h38 min</span>
-                    </div>
-                    <div>
-                        <form>
-                            <button type="submit">X</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="comment_form">
-            <form id="commentform" class="commentform" method="post" action="#">
-                <input type="text" id="author" name="name" placeholder="Name"/>
-                <textarea name="comment" id="comment" cols="75" rows="10"></textarea>
-                <p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
-            </form>
-        </div>
+    <div class="comment_form">
+        <form id="commentform" class="commentform" method="post" action="#">
+            <input type="text" id="author" name="name" placeholder="Name"/>
+            <textarea name="comment" id="comment" cols="75" rows="10"></textarea>
+            <p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
+        </form>
     </div>
 </div>

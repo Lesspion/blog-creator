@@ -11,14 +11,18 @@
 {% block body %}
 	{% include 'header.html' %}
 	<div class="main">
-		<div>
-        	<a href="/create"><button class="button button--pipaluk button--inverted clear">Poster</button></a>
-        </div>
-		<div>
-        	<h2>Mes Articles</h2>
-        </div>
-		<div class="blog_post">
-			{% include 'list.html'%}
+		<div class="wrap">
+			<div>
+	        	<a href="/create"><button class="button button--pipaluk button--inverted clear">Poster</button></a>
+	        </div>
+			<div>
+	        	<h2>Mes Articles</h2>
+	        </div>
+			<div class="blog_post">
+			{% for article in articles %}
+				{% include 'list.html'%}
+			{% endfor %}
+			</div>
 		</div>
 	</div>
 {% block javascripts%}

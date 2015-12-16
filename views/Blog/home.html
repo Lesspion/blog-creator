@@ -8,7 +8,6 @@
   {% include '../BaseFront/header.html'%}
 	<section class=" section_container container">
 		<div class="main_section">
-			<!-- Swig faire une boucle pour les articles récents-->
 			<div class="news">
 				<header class='content_banner'>
 					<div>
@@ -16,8 +15,9 @@
 					</div>
 				</header>
 					<div class="blog_post">
-						<!--Autre page twig à boucler-->
-            			{% include 'articles.html'%}
+						{% for article in articles %}
+            				{% include 'articles.html'%}
+            			{% endfor %}
 					</div>
 			</div>
 			<div class="news"></div>
