@@ -11,13 +11,13 @@
 	/*background: url('../img/wall-test.jpg') no-repeat center bottom;*/
 	margin: 60px auto auto;
 	width: 100%;
-	border-left: 1px solid rgb(239, 230, 210);;
-	border-right: 1px solid rgb(239, 230, 210);;
-	padding: 45px;
 }
 .wrap {
 	width: 960px !important;
 	margin: auto;
+	border-left: 1px solid rgb(239, 230, 210);
+	border-right: 1px solid rgb(239, 230, 210);
+	padding: 30px;
 }
 .main img {
 	float: left;
