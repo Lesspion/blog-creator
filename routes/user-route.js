@@ -33,6 +33,7 @@ app.post('/signup', function (req, res) {
 						res.send(err);
 					req.session.id = user._id;
 					req.session.pseudo = user.pseudo;
+					req.session.connected = true;
 					// res.render('index', {
 					// 	pagename: "HomePage",
 					// 	authors: ['Adeline', 'Chris'],
@@ -66,6 +67,7 @@ app.post('/login', function (req, res) {
 			if (user) {
 				req.session.id = user._id;
 				req.session.pseudo = user.pseudo;
+				req.session.connected = true;
 				if (user.firstname) {
 					req.session.firstname = user.firstname;
 				}

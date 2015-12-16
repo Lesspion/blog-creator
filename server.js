@@ -5,6 +5,7 @@ var mongoose   = require('mongoose');
 var swig 	   = require('swig');
 var subdomain  = require('subdomain');
 var userRoute  = require('./routes/user-route');
+var blogRoute  = require('./routes/blog-route');
 var session    = require('express-session');
 var fetchBlog  = require('./personal_modules/Blog');
 
@@ -51,24 +52,28 @@ app.get('/', function (req, res) {
 		res.render('index', {
 			pagename: "HomePage",
 			authors: ['Adeline', 'Chris'],
-			blogs: blogs
+			blogs: blogs,
+			session: req.session
 		});
 	});
 });
 
 app.use('/', userRoute);
+app.use('/', blogRoute);
 
 app.get('/blog', function (req, res) {
 	res.render('Blog/home', {
 		pagename: "Home",
-		authors: ['Adeline', 'Chris']
+		authors: ['Adeline', 'Chris'],
+		session: req.session
 	});
 });
 
 app.get('/blog/article', function (req, res) {
 	res.render('Blog/detailArticle', {
 		pagename: "detailArticle",
-		authors: ['Adeline', 'Chris']
+		authors: ['Adeline', 'Chris'],
+		session: req.session
 	});
 });
 
@@ -82,10 +87,12 @@ app.get('/profil', function (req, res) {
 
 app.get('/accueil', function (req, res) {
 	fetchBlog(function (blogs) {
+		console.log(req.session);
 		res.render('BaseBack/accueil', {
 			pagename: "Accueil log",
 			authors: ['Adeline', 'Chris'],
-			blogs: blogs
+			blogs: blogs,
+			session: req.session
 		});
 	});
 });
@@ -93,14 +100,17 @@ app.get('/accueil', function (req, res) {
 app.get('/create', function (req, res) {
 	res.render('BaseBack/create', {
 		pagename: "Article creation",
-		authors: ['Adeline', 'Chris']
+		authors: ['Adeline', 'Chris'],
+		session: req.session,
+		createBlog: true
 	});
 });
 
 app.get('/articles', function (req, res) {
 	res.render('BaseBack/articles', {
 		pagename: "Mes articles",
-		authors: ['Adeline', 'Chris']
+		authors: ['Adeline', 'Chris'],
+		session: req.session
 	});
 });
 
