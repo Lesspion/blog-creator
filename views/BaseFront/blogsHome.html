@@ -2,12 +2,12 @@
     <ul>
         <li class="clearfix">
             <a href="#" title="View the blogs">
-                <img src="../../assets/img/test-blog.jpg"  alt="blogs attached picture">
-                <p class="blog-title">xXBoulouXx</p>
+                <img src="{{blogs.picture}}"  alt="blogs attached picture">
+                <p class="blog-title">{{blogs.name}}</p>
             </a>
             <p class="blog-infos">
-                <a href="#" class="userFile" data-id="{{ idea.author.id }}">Bouloulou</a>
-                <span>06/05/85</span>
+                <a href="#" class="userFile" data-id="{{ blogs.id }}">{{blogs.author}}</a>
+                <span>{{blogs.createdAt}}</span>
             </p>
         </li>
     </ul>

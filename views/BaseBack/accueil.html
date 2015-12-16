@@ -17,8 +17,9 @@
         		<h2>Blogs</h2>
         	</div>
             <div class="blogs line">
-            <!--BOUCLE-->
+            {% for blog in blogs %}
                 {% include '../BaseFront/blogsHome.html' %}
+            {% endfor %}
     		</div>
         </div>
     </section>

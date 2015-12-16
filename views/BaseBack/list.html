@@ -1,21 +1,21 @@
 <!-- Remplacé par les variables -->
 <div class="latest-post">
-    <div class="w250 img"><img src="../assets/img/article_test.jpg"></div>
+    <div class="w250 img"><img src="{{ article.picture }}"></div>
     <div class="content_post w250">
         <div class="post_title">
             <a href="/detailArticle">
-                <h4>Boulou</h4>
+                <h4>{{ article.title }}</h4>
             </a>
         </div>
         <div class="post_desc">
-            <p>sdgjhezlvinvr nbrjtb,fkj lkrjety,bjr kljtrhkje</p>
+            <p>{{ article.content}}</p>
         </div>
         <div class="post_meta">
             <div class="meta_info">
-                <span class="date">17 novembre 2015 - 18h38 min</span>
+                <span class="date">{{ article.createdAt }}</span>
             </div>
             <div class="meta_info">
-        <span class="comment"><a href="/Blog/article">2</a><!--{{ idea.nbComments }}--></span>
+        <span class="comment"><a href="/Blog/article">{{ article.nbComments}}</a></span>
             </div>
         </div>
         <div class="edit">
