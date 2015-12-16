@@ -5,7 +5,7 @@ var Blog 		= require('../models/Blog');
 var Article 	= require('../models/Article');
 
 app.get('/create/article/:id_blog', function (req, res) {
-	res.render('BaseBack/profil', {
+	res.render('BaseBack/create', {
 		pagename: "Article creation",
 		authors: ['Adeline', 'Chris'],
 		session: req.session,

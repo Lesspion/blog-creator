@@ -4,20 +4,21 @@ var User 		= require('../models/User');
 var Blog 		= require('../models/Blog');
 
 app.post('/create', function (req, res) {
-	if (req.body.blog_name != "undefined" && req.body.category !== "undefined" && req.session.id) {
+	if (req.body.name != "undefined" && req.body.category !== "undefined" && req.session.id) {
 		var blog = new Blog();
-		blog.id_user = req.session.id;
-		blog.name = req.body.blog_name;
+		blog.id_user = req.session._id;
+		blog.name = req.body.name;
 		blog.category = req.body.category;
 		blog.save(function (err) {
 			if (err)
 				res.end(err);
-			res.render('BaseBack/profil', {
-				pagename: "Profil",
-				authors: ['Adeline', 'Chris'],
-				session: req.session,
-				success: "Blog created successfully"
-			});
+			// res.render('BaseBack/profil', {
+			// 	pagename: "Profil",
+			// 	authors: ['Adeline', 'Chris'],
+			// 	session: req.session,
+			// 	success: "Blog created successfully"
+			// });
+			res.redirect('/profil');
 		});
 	} else {
 		res.render('BaseBack/create', {

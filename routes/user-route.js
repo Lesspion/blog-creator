@@ -65,7 +65,7 @@ app.post('/login', function (req, res) {
 	} else {
 		User.findOne({email: req.body.email, password: md5(req.body.password)}, function (err, user) {
 			if (user) {
-				req.session.id = user._id;
+				req.session._id = user['_id'];
 				req.session.pseudo = user.pseudo;
 				req.session.connected = true;
 				if (user.firstname) {
