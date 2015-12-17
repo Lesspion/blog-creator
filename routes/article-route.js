@@ -3,6 +3,7 @@ var app 		= express();
 var User 		= require('../models/User');
 var Blog 		= require('../models/Blog');
 var Article 	= require('../models/Article');
+var Commentaire = require('../models/Commentaire');
 
 app.get('/create/article/:id_blog', function (req, res) {
 	res.render('BaseBack/create', {
@@ -85,6 +86,27 @@ app.delete('/article/:id_blog/:id_article', function (req, res) {
 app.get('/article/:id_blog/:id_article', function (req, res) {
 	Article.find({_id: req.params.id_article}, function (err, article) {
 		// return article with a view;
+	});
+});
+
+app.get('/articles/:id_blog', function (req, res) {
+	Article.find({id_blog: req.params.id_blog}, function (err, articles) {
+		var articlesList = [];
+		for (var i = 0; i < articles.length; i++) {
+			var temp       = {};
+			temp.picture   = articles[i].pictures || "";
+			temp.title     = articles[i].title;
+			temp.content   = articles[i].text;
+			temp.createdAt = articles[i].created_at;
+			temp.nbComment = articles[i].commentaires.length;
+			articlesList.push(temp);
+		}
+		res.render('BaseBack/articles', {
+			pagename: "Mes articles",
+			authors: ['Adeline', 'Chris'],
+			session: req.session,
+			articles: temp
+		});
 	});
 });
 
