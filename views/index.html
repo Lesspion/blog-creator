@@ -2,9 +2,9 @@
 {% block title %}BlogCreator{% endblock %}
 {% block rootclass %}home{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="../assets/css/home.css">
-<link href="../assets/css/bootstrap.css" rel="stylesheet">
-<link href="../assets/css/grayscale.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ base_URI }}/assets/css/home.css">
+<link href="{{ base_URI }}/assets/css/bootstrap.css" rel="stylesheet">
+<link href="{{ base_URI }}/assets/css/grayscale.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
 	{% if error %}
@@ -43,7 +43,7 @@
                 </button>
 				<h1 class="logo">
 					<a class="navbar-brand page-scroll" href="#">
-						<img src="../assets/img/logo.png">
+						<img src="{{ base_URI }}/assets/img/logo.png">
 					</a>
 				</h1>
 				<ul class="nav navbar-nav">
@@ -119,9 +119,9 @@
 {% endblock %}
 {% block javascripts%}
 	{% parent %}
-		<script type="text/javascript" src="../assets/js/home.js"></script>
-		<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
- 		<script type="text/javascript" src="../assets/js/grayscale.js"></script> 
- 		<script type="text/javascript" src="../assets/js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="{{ base_URI }}/assets/js/home.js"></script>
+		<script type="text/javascript" src="{{ base_URI }}/assets/js/bootstrap.js"></script>
+ 		<script type="text/javascript" src="{{ base_URI }}/assets/js/grayscale.js"></script> 
+ 		<script type="text/javascript" src="{{ base_URI }}/assets/js/jquery.easing.min.js"></script>
 {% endblock %}
 </html>
