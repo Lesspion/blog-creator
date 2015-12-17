@@ -22,7 +22,7 @@
 			<!--MESSAGERIE-->
 			<div class="messagerie">
 				<form action="#" method="post" id="search" class="left">
-				   <input name="search" id="msg" type="text" placeholder="Laissez un message à ..." />
+				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{ session.pseudo }}" />
 				   <button type="submit" name="send">Envoyer</button>
 				</form>
 				<div class="overflow">
@@ -33,9 +33,18 @@
 			</div>
 
 			<div class="infos">
+			<div class="block">
+				<h2>Mes Blogs</h2>
 				{% for blog in blogs %}
 						{% include 'info.html' %}
 				{% endfor %}
+			</div>
+				<div class="block">
+					<h2>Mes Amis</h2>
+					{% for friend in friends %}
+						{% include 'friend.html' %}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</div>

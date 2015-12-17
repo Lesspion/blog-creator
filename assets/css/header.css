@@ -97,6 +97,8 @@ nav form button {
 .account .photo img {
     position: relative;
     float: left;
+    width: 64px;
+    height: 47px;
 }
 .account .photo .photo-username {
     float: left;
@@ -146,24 +148,53 @@ nav form button {
 
 /*MEDIA QUERIE*/
 
-@media(max-width:1500px) {
+@media(min-width:1000px) {
     .account .photo {
         float: none;
     }
     #container h1 {
         margin: auto auto auto 1%;
-        float: none;
+        float: left;
         width: 20%;
     }
     #container h1 img {
         width: 33%;
     }
     .navbar-nav > li {
-        margin-left: 180px;
+        margin-left: 52%;
     }
     .navbar-nav{
-        width: 100%;
-        float: right;
+        width: 78%;
+        float: left;
+    }
+    #blogs h2 {
+        background-color: #000;
+    }
+    .edit a {
+        float: left;
+    }
+    .edit form button {
+        float: left;
+    }
+}
+@media(max-width:1280px) {
+    .account .photo {
+        float: none;
+    }
+    #container h1 {
+        margin: auto auto auto 1%;
+        float: left;
+        width: 20%;
+    }
+    #container h1 img {
+        width: 33%;
+    }
+    .navbar-nav > li {
+       
+    }
+    .navbar-nav{
+        width: 33%;
+        float: left;
     }
     #blogs h2 {
         background-color: #000;
