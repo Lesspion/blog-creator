@@ -8,19 +8,19 @@
             </a>
         </div>
         <div class="post_desc">
-            <p>{{ article.content}}</p>
+            <p>{{ article.content|striptags}}</p>
         </div>
         <div class="post_meta">
             <div class="meta_info">
-                <span class="date">{{ article.createdAt }}</span>
+                <span class="date">{{ article.createdAt|date('d M Y - H:i')|toString }}</span>
             </div>
             <div class="meta_info">
         <span class="comment"><a href="/Blog/article">{{ article.nbComments}}</a></span>
             </div>
         </div>
         <div class="edit">
-            <a href="/create">Modifier</a>
-            <form>
+            <a href="{{base_URI}}/edit/article/{{ article._id }}">Modifier</a>
+            <form method="delete" action="{{base_URI}}/article/{{actualBlog}}/{{article._id}}">
                 <button type="submit">X</button>
             </form>
             

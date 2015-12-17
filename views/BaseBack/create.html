@@ -2,10 +2,10 @@
 {% block title %}BlogCreator{% endblock %}
 {% block rootclass %}create{% endblock %}
 {% block stylesheets %}
-<link href="../assets/css/bootstrap.css" rel="stylesheet">
-<link href="../assets/css/header.css" rel="stylesheet">
-<link href="../assets/css/grayscale.css" rel="stylesheet">
-<link href="../assets/css/back.css" rel="stylesheet">
+<link href="{{base_URI}}/assets/css/bootstrap.css" rel="stylesheet">
+<link href="{{base_URI}}/assets/css/header.css" rel="stylesheet">
+<link href="{{base_URI}}/assets/css/grayscale.css" rel="stylesheet">
+<link href="{{base_URI}}/assets/css/back.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
 	{% include 'header.html' %}
@@ -20,8 +20,12 @@
 				{% endif %}
 				{% if createArticle == true %}
 					<label><h3>Titre</h3></label>
-					<input type="text" name="title" placeholder="Titre de l'article"/>
-					<textarea id="myTextarea" name="text"></textarea>
+					<input type="text" name="title" placeholder="Titre de l'article" {% if article.title %} value="{{article.title}}"{% endif %}/>
+					<textarea id="myTextarea" name="content">
+						{% if article.text %}
+							{{article.text}}
+						{% endif %}
+					</textarea>
 				{% endif %}
 					<input type="submit" name="submit" value="Publiez"/>
 			</form>
@@ -29,8 +33,8 @@
 	</div>
 {% block javascripts%}
 	{% parent %}
-		<script type="text/javascript" src="../assets/js/tinymce.min.js"></script>
-		<script type="text/javascript" src="../assets/js/home.js"></script>
+		<script type="text/javascript" src="{{base_URI}}/assets/js/tinymce.min.js"></script>
+		<script type="text/javascript" src="{{base_URI}}/assets/js/home.js"></script>
 		<script>tinymce.init({ 
     	selector:'#myTextarea',
     	theme: 'modern',
