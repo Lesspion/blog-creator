@@ -154,18 +154,18 @@ nav form button {
     }
     #container h1 {
         margin: auto auto auto 1%;
-        float: none;
+        float: left;
         width: 20%;
     }
     #container h1 img {
         width: 33%;
     }
     .navbar-nav > li {
-        margin-left: 180px;
+        margin-left: 48%;
     }
     .navbar-nav{
-        width: 100%;
-        float: right;
+        width: 64%;
+        float: left;
     }
     #blogs h2 {
         background-color: #000;
