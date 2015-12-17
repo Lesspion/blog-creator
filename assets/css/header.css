@@ -148,7 +148,7 @@ nav form button {
 
 /*MEDIA QUERIE*/
 
-@media(max-width:1500px) {
+@media(min-width:1000px) {
     .account .photo {
         float: none;
     }
@@ -161,10 +161,39 @@ nav form button {
         width: 33%;
     }
     .navbar-nav > li {
-        margin-left: 48%;
+        margin-left: 52%;
     }
     .navbar-nav{
-        width: 64%;
+        width: 78%;
+        float: left;
+    }
+    #blogs h2 {
+        background-color: #000;
+    }
+    .edit a {
+        float: left;
+    }
+    .edit form button {
+        float: left;
+    }
+}
+@media(max-width:1280px) {
+    .account .photo {
+        float: none;
+    }
+    #container h1 {
+        margin: auto auto auto 1%;
+        float: left;
+        width: 20%;
+    }
+    #container h1 img {
+        width: 33%;
+    }
+    .navbar-nav > li {
+       
+    }
+    .navbar-nav{
+        width: 33%;
         float: left;
     }
     #blogs h2 {

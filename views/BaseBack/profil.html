@@ -33,9 +33,18 @@
 			</div>
 
 			<div class="infos">
+			<div class="block">
+				<h2>Mes Blogs</h2>
 				{% for blog in blogs %}
 						{% include 'info.html' %}
 				{% endfor %}
+			</div>
+				<div class="block">
+					<h2>Mes Amis</h2>
+					{% for friend in friends %}
+						{% include 'friend.html' %}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
 	</div>
