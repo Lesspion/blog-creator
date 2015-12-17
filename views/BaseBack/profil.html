@@ -22,7 +22,7 @@
 			<!--MESSAGERIE-->
 			<div class="messagerie">
 				<form action="#" method="post" id="search" class="left">
-				   <input name="search" id="msg" type="text" placeholder="Laissez un message à ..." />
+				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{ session.pseudo }}" />
 				   <button type="submit" name="send">Envoyer</button>
 				</form>
 				<div class="overflow">
