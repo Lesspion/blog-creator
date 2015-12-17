@@ -13,7 +13,13 @@ nav {
     letter-spacing: 1px; 
     position: relative !important;
 }
-
+.navbar-header {
+    width: 960px;
+    margin: auto;
+}
+#container h1 img {
+    width: 40%;
+}
 /*search*/
 
 .nav form {
@@ -75,6 +81,7 @@ nav form button {
     float: left;
     font-size: 24px;
     line-height: 1.6;
+    margin-right: 25px;
 }
 .account p a {
     display: inline-block;
@@ -97,8 +104,8 @@ nav form button {
 .account .photo img {
     position: relative;
     float: left;
-    width: 64px;
-    height: 47px;
+    width: 50px;
+    height: 50px;
 }
 .account .photo .photo-username {
     float: left;
@@ -158,10 +165,10 @@ nav form button {
         width: 20%;
     }
     #container h1 img {
-        width: 33%;
+        width: 40%;
     }
     .navbar-nav > li {
-        margin-left: 52%;
+        margin-left: 46%;;
     }
     .navbar-nav{
         width: 78%;
