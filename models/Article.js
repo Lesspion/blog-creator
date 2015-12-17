@@ -1,7 +1,5 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
-var Affinities   = require('./affinities.js');
-var Skills       = require('./skills.js');
 
 var ArticleSchema   = new Schema({
 	id_blog: {type: Schema.ObjectId, ref: "Blog"},

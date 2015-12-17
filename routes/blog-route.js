@@ -79,7 +79,7 @@ app.get('/profil/:id_user?', function (req, res) {
 		var blogSend = [];
 		for (var i = 0; i < blogs.length; i++) {
 			var temp = {};
-			temp._id = blogs[i]._id;
+			temp._id = blogs[i]._id.toString();
 			temp.name = blogs[i].name;
 			blogSend.push(temp);
 		}

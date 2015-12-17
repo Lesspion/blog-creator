@@ -6,6 +6,7 @@ var swig 	   = require('swig');
 var subdomain  = require('subdomain');
 var userRoute  = require('./routes/user-route');
 var blogRoute  = require('./routes/blog-route');
+var articleRoute = require('./routes/article-route');
 var session    = require('express-session');
 var fetchBlog  = require('./personal_modules/Blog');
 var Picture    = require('./personal_modules/Picture');
@@ -28,18 +29,21 @@ app.set('views', __dirname + '/views');
 app.set('view cache', false);
 swig.setDefaults({ cache: false });
 
-app.use(function (req, res, next) {
-	res.locals.base_URI = Env.Base_URI;
-	next();
+swig.setFilter('toString', function (input) {
+	return input.toString();
 });
 
 app.use(subdomain({
 	base: 'blog-creator.prod'
 }));
 
+app.use(function (req, res, next) {
+	res.locals.base_URI = Env.Base_URI;
+	next();
+});
+
 app.get('/subdomain/www', function (req, res) {
 	fetchBlog(function (blogs) {
-		console.log(blogs);
 		res.render('index', {
 			pagename: "HomePage",
 			authors: ['Adeline', 'Chris'],
@@ -56,7 +60,6 @@ app.get('/', function (req, res) {
 	req.session.touch();
 	req.session.connected = false;
 	fetchBlog(function (blogs) {
-		console.log(blogs);
 		res.render('index', {
 			pagename: "HomePage",
 			authors: ['Adeline', 'Chris'],
@@ -68,6 +71,7 @@ app.get('/', function (req, res) {
 
 app.use('/', userRoute);
 app.use('/', blogRoute);
+app.use('/', articleRoute);
 
 app.get('/blog', function (req, res) {
 	res.render('Blog/home', {
