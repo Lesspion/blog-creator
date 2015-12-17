@@ -6,7 +6,7 @@
                 <p class="blog-title">{{blog.name}}</p>
             </a>
             <p class="blog-infos">
-                <a href="#" class="userFile" data-id="{{ blogs.id }}">{{blog.author}}</a>
+                <a href="{{base_URI}}/profil/{{blog._id|toString}}" class="userFile" data-id="{{ blog._id|toString }}">{{blog.author}}</a>
                 <span>{{blog.createdAt}}</span>
             </p>
         </li>
