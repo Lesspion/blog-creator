@@ -8,12 +8,15 @@ var userRoute  = require('./routes/user-route');
 var blogRoute  = require('./routes/blog-route');
 var session    = require('express-session');
 var fetchBlog  = require('./personal_modules/Blog');
+var Picture    = require('./personal_modules/Picture');
+var Env        = require('./settings/env');
+var sortBlog   = require('./personal_modules/SortBlog');
 
 mongoose.connect('mongodb://localhost:27017/blogcreator');
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.use(session({secret: 'javascriptIsAwesome'}));
+app.use(session(Env.Session.Secret));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -24,6 +27,11 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.set('view cache', false);
 swig.setDefaults({ cache: false });
+
+app.use(function (req, res, next) {
+	res.locals.base_URI = Env.Base_URI;
+	next();
+});
 
 app.use(subdomain({
 	base: 'blog-creator.prod'
@@ -52,7 +60,7 @@ app.get('/', function (req, res) {
 		res.render('index', {
 			pagename: "HomePage",
 			authors: ['Adeline', 'Chris'],
-			blogs: blogs,
+			blogs: sortBlog(blogs),
 			session: req.session
 		});
 	});
@@ -86,12 +94,13 @@ app.get('/profil', function (req, res) {
 });
 
 app.get('/accueil', function (req, res) {
+	console.log("_id : ", req.session._id);
+	req.session.picture = Picture.Profil.get(req.session._id);
 	fetchBlog(function (blogs) {
-		console.log(req.session);
 		res.render('BaseBack/accueil', {
 			pagename: "Accueil log",
 			authors: ['Adeline', 'Chris'],
-			blogs: blogs,
+			blogs: sortBlog(blogs),
 			session: req.session
 		});
 	});
