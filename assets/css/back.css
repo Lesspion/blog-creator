@@ -353,7 +353,7 @@ form button {
 	float: left;
 }
 .profil input[type="text"],.create input[type="text"] {
-    width: 91%;
+    width: 85%;;
     height: 36px;
     line-height: 2.5em;
     /*padding: 0px 0.5em 0px 2em;*/
@@ -385,7 +385,7 @@ form button {
 }
 .block  p:nth-child(2) {
 	float: right;
-	margin-top: -9px;
+	margin: -9px 0px 0px 0px;
 }
 .infos .post a {
 	display: inline-block;
