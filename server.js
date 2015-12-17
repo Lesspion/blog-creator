@@ -85,13 +85,13 @@ app.get('/blog/article', function (req, res) {
 	});
 });
 
-app.get('/profil', function (req, res) {
-	res.render('BaseBack/profil', {
-		pagename: "Profil",
-		authors: ['Adeline', 'Chris'],
-		session: req.session
-	});
-});
+// app.get('/profil', function (req, res) {
+// 	res.render('BaseBack/profil', {
+// 		pagename: "Profil",
+// 		authors: ['Adeline', 'Chris'],
+// 		session: req.session
+// 	});
+// });
 
 app.get('/accueil', function (req, res) {
 	console.log("_id : ", req.session._id);

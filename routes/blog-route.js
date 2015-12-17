@@ -12,12 +12,6 @@ app.post('/create', function (req, res) {
 		blog.save(function (err) {
 			if (err)
 				res.end(err);
-			// res.render('BaseBack/profil', {
-			// 	pagename: "Profil",
-			// 	authors: ['Adeline', 'Chris'],
-			// 	session: req.session,
-			// 	success: "Blog created successfully"
-			// });
 			res.redirect('/profil');
 		});
 	} else {
@@ -73,6 +67,27 @@ app.delete('/delete/:id_blog', function (req, res) {
 				session: req.session,
 				success: "Blog successfully deleted"
 			});
+		});
+	});
+});
+
+app.get('/profil/:id_user?', function (req, res) {
+	var id_user = req.params.id_user || req.session._id;
+	Blog.find({id_user: id_user}, function (err, blogs) {
+		if (err)
+			res.send(err);
+		var blogSend = [];
+		for (var i = 0; i < blogs.length; i++) {
+			var temp = {};
+			temp._id = blogs[i]._id;
+			temp.name = blogs[i].name;
+			blogSend.push(temp);
+		}
+		res.render('BaseBack/profil', {
+			pagename: "Profil",
+			authors: ['Adeline', 'Chris'],
+			session: req.session,
+			blogs: blogSend
 		});
 	});
 });
