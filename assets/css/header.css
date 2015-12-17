@@ -11,10 +11,10 @@ nav {
     background-color: #EFE6D2!important;
     padding: 10px 0px;
     letter-spacing: 1px; 
-    position: relative !important;
+    position: fixed !important;
 }
 .navbar-header {
-    width: 960px;
+    width: 1122px;
     margin: auto;
 }
 #container h1 img {
