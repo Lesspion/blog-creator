@@ -9,10 +9,12 @@ var sortBlog = function (blogsArray) {
 		temp.name = blogsArray[i].name;
 		temp.category = blogsArray[i].category;
 		temp.createdAt = "xx/xx/xxxx";
-		User.findOne({_id: blogsArray[i].id_user}, function (err, user) {
-			temp.author = user.pseudo;
-			temp.picture = Picture.Profil.get(user._id);
-		});
+		temp.author = blogsArray[i].id_user.pseudo;
+		temp.picture = Picture.Profil.get(blogsArray[i].id_user);
+		// User.findOne({_id: blogsArray[i].id_user}, function (err, user) {
+		// 	temp.author = user.pseudo;
+		// 	temp.picture = Picture.Profil.get(user._id);
+		// });
 		finalBlogs.push(temp);
 	}
 	return finalBlogs;
