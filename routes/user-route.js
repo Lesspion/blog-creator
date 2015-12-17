@@ -31,8 +31,9 @@ app.post('/signup', function (req, res) {
 				user.save(function (err) {
 					if (err)
 						res.send(err);
-					req.session.id = user._id;
+					req.session._id = user._id;
 					req.session.pseudo = user.pseudo;
+					req.session.connected = true;
 					// res.render('index', {
 					// 	pagename: "HomePage",
 					// 	authors: ['Adeline', 'Chris'],
@@ -64,8 +65,9 @@ app.post('/login', function (req, res) {
 	} else {
 		User.findOne({email: req.body.email, password: md5(req.body.password)}, function (err, user) {
 			if (user) {
-				req.session.id = user._id;
+				req.session._id = user['_id'];
 				req.session.pseudo = user.pseudo;
+				req.session.connected = true;
 				if (user.firstname) {
 					req.session.firstname = user.firstname;
 				}

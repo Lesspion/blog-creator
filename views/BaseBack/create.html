@@ -12,17 +12,19 @@
 	<div class="main">
 		<div class="wrap">
 	<!--Si premier blog-->
-			<form>
-				<label><h3>Nom du blog</h3></label>
-				<input type="text" name="name" placeholder="Nom du blog"/>
-				<!--else-->
-				<label><h3>Catégories</h3></label>
-				<input type="text" name="categorie" placeholder="Catégories"/>
-				<label><h3>Titre</h3></label>
-				<input type="text" name="title" placeholder="Titre de l'article"/>
-				<textarea id="myTextarea"></textarea>
-				
-				<input type="submit" name="submit" value="Publiez"/>
+			<form method="post" action="">
+				{% if createBlog == true %}
+					<label><h3>Nom du blog</h3></label>
+					<input type="text" name="name" placeholder="Nom du blog"/>
+					<label><h3>Catégories</h3></label>
+					<input type="text" name="category" placeholder="Catégories"/>
+				{% endif %}
+				{% if createArticle == true %}
+					<label><h3>Titre</h3></label>
+					<input type="text" name="title" placeholder="Titre de l'article"/>
+					<textarea id="myTextarea" name="text"></textarea>
+				{% endif %}
+					<input type="submit" name="submit" value="Publiez"/>
 			</form>
 		</div>
 	</div>
