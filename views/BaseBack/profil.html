@@ -14,7 +14,7 @@
 	<div class="main">
 		<div class="wrap">
 			<div class="user">
-				<img src="../assets/img/user-test.gif" alt="profil">
+				<img src="../assets/img/default.png" alt="profil">
 				<h3>{{session.pseudo}}</h3>
 				<p>Changer sa photo de profil</p>
 			</div>
@@ -36,7 +36,7 @@
 			<div class="block">
 				<h2>Mes Blogs</h2>
 				{% for blog in blogs %}
-						{% include 'info.html' %}
+					{% include 'info.html' %}
 				{% endfor %}
 			</div>
 				<div class="block">
