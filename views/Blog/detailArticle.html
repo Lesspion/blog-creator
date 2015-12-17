@@ -2,7 +2,7 @@
 {% block title %}MyBlog{% endblock %}
 {% block rootclass %}details{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" type="text/css" href="../assets/css/homeBlog.css">
+<link rel="stylesheet" type="text/css" href="{{ base_URI }}/assets/css/homeBlog.css">
 {% endblock %}
 {% block body %}
   {% include '../BaseFront/header.html'%}
@@ -22,7 +22,7 @@
 					        
 					        <div class="post_meta">
 					            <div class="meta_info">
-					                <span class="date">{{ article.createdAt}}</span>
+					                <span class="date">{{ article.createdAt|date('d M Y - H:i') }}</span>
 					            </div>
 					            <div class="meta_info">
 					        <span class="comment">{{ article.nbComments }}</span>

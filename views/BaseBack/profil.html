@@ -3,10 +3,10 @@
 {% block rootclass %}profil{% endblock %}
 {% block stylesheets %}
 
-<link href="../assets/css/bootstrap.css" rel="stylesheet">
-<link href="../assets/css/header.css" rel="stylesheet">
-<link href="../assets/css/grayscale.css" rel="stylesheet">
-<link href="../assets/css/back.css" rel="stylesheet">
+<link href="{{ base_URI }}/assets/css/bootstrap.css" rel="stylesheet">
+<link href="{{ base_URI }}/assets/css/header.css" rel="stylesheet">
+<link href="{{ base_URI }}/assets/css/grayscale.css" rel="stylesheet">
+<link href="{{ base_URI }}/assets/css/back.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
 	{% include 'header.html' %}
@@ -14,9 +14,16 @@
 	<div class="main">
 		<div class="wrap">
 			<div class="user">
-				<img src="../assets/img/default.png" alt="profil">
+				<img src="{{ base_URI }}/assets/img/default.png" alt="profil">
 				<h3>{{session.pseudo}}</h3>
-				<p>Changer sa photo de profil</p>
+				<p>
+					<form action="" method="post" enctype="multipart/form-data">
+					    <div class="upload">
+					    <p>Changer sa photo de profil</p>
+					        <input type="file" name="upload"/>
+					    </div>
+					</form>
+				</p>
 			</div>
 			<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
 			<!--MESSAGERIE-->
@@ -32,7 +39,7 @@
 				</div>
 			</div>
 
-			<div class="infos">
+			<div class="info">
 			<div class="block">
 				<h2>Mes Blogs</h2>
 				{% for blog in blogs %}
@@ -50,6 +57,6 @@
 	</div>
 {% block javascripts%}
 	{% parent %}
-		<script type="text/javascript" src="../assets/js/home.js"></script>
+		<script type="text/javascript" src="{{ base_URI }}/assets/js/home.js"></script>
 {% endblock %}
 {% endblock %}

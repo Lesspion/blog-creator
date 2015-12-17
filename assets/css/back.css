@@ -18,6 +18,7 @@
 	border-left: 1px solid rgb(239, 230, 210);
 	border-right: 1px solid rgb(239, 230, 210);
 	padding: 30px;
+	margin-top: 130px;
 }
 .main img {
 	float: left;
@@ -104,8 +105,9 @@ h2 {
 
 /* Infos Profil */
 
-.infos {
+.info {
 	margin-top: 100px;
+	min-height: 300px;
 }
 .block {
 	width: 48%;
@@ -353,7 +355,7 @@ form button {
 	float: left;
 }
 .profil input[type="text"],.create input[type="text"] {
-    width: 91%;
+    width: 85%;;
     height: 36px;
     line-height: 2.5em;
     /*padding: 0px 0.5em 0px 2em;*/
@@ -375,6 +377,7 @@ form button {
 	font-size: 12px;
 	color: #B2B2B2;
 	padding: 44px 0px 0px 0px;
+	margin-top: -35px;
 }
 .main .user h3 {
 	padding-left: 116px;
@@ -384,7 +387,7 @@ form button {
 }
 .block  p:nth-child(2) {
 	float: right;
-	margin-top: -9px;
+	margin: -9px 0px 0px 0px;
 }
 .infos .post a {
 	display: inline-block;
@@ -397,6 +400,20 @@ form button {
 	text-decoration: none;
 	border-radius: 4em;
 }
+div.upload {
+    width: 157px;
+    height: 57px;
+    background: none;
+    overflow: hidden;
+}
+div.upload input {
+	display: block !important;
+	width: 157px !important;
+	height: 31px !important;
+	opacity: 0 !important;
+	overflow: hidden !important;
+	margin-top: -62px;
+	}
 
 /*MEDIA QUERIE*/
 
