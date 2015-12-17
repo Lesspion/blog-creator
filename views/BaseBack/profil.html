@@ -16,7 +16,14 @@
 			<div class="user">
 				<img src="../assets/img/default.png" alt="profil">
 				<h3>{{session.pseudo}}</h3>
-				<p>Changer sa photo de profil</p>
+				<p>
+					<form action="" method="post" enctype="multipart/form-data">
+					    <div class="upload">
+					    <p>Changer sa photo de profil</p>
+					        <input type="file" name="upload"/>
+					    </div>
+					</form>
+				</p>
 			</div>
 			<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
 			<!--MESSAGERIE-->
