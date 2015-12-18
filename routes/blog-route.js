@@ -145,6 +145,7 @@ app.get('/blog/:author_name/:id_blog', function (req, res) {
 				req.session.picture = Picture.Profil.get(author._id);
 				author.picture = Picture.Profil.get(author._id);
 				author.name    = author.pseudo
+				// req.session.articles = articlesList;
 				res.render('Blog/home', {
 					pagename: "Home",
 					authors: ['Adeline', 'Chris'],
