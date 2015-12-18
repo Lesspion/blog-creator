@@ -31,7 +31,7 @@
 			<!--MESSAGERIE-->
 			<div class="messagerie">
 				<form action="#" method="post" id="search" class="left">
-				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{ session.pseudo }}" />
+				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{current.pseudo}}" />
 				   <button type="submit" name="send">Envoyer</button>
 				</form>
 				<div class="overflow">
@@ -43,13 +43,13 @@
 
 			<div class="info">
 			<div class="block">
-				<h2>Mes Blogs</h2>
+				<h2>Blogs</h2>
 				{% for blog in blogs %}
 					{% include 'info.html' %}
 				{% endfor %}
 			</div>
 				<div class="block">
-					<h2>Mes Amis</h2>
+					<h2>Amis</h2>
 					{% for friend in friends %}
 						{% include 'friend.html' %}
 					{% endfor %}
