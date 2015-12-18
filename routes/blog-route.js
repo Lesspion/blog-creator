@@ -16,6 +16,7 @@ app.post('/create', function (req, res) {
 		blog.id_user = req.session._id;
 		blog.name = req.body.name;
 		blog.category = req.body.category;
+		blog.createdAt = Date.now();
 		blog.save(function (err) {
 			if (err)
 				res.end(err);

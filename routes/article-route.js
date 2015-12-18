@@ -98,25 +98,26 @@ app.get('/article/:id_blog/:id_article', function (req, res) {
 
 app.get('/articles/:id_blog', function (req, res) {
 	Article.find({id_blog: req.params.id_blog}, function (err, articles) {
-		var articlesList = [];
-		for (var i = 0; i < articles.length; i++) {
-			var temp       = {};
-			temp._id 	   = articles[i]._id.toString();
-			temp.picture   = articles[i].pictures || "";
-			temp.title     = articles[i].title;
-			temp.content   = articles[i].text;
-			temp.createdAt = articles[i].created_at;
-			temp.nbComments = articles[i].commentaires.length;
-			articlesList.push(temp);
-		}
-		res.render('BaseBack/articles', {
-			pagename: "Mes articles",
-			authors: ['Adeline', 'Chris'],
-			session: req.session,
-			articles: articlesList,
-			actualBlog: req.params.id_blog
+		
+			var articlesList = [];
+			for (var i = 0; i < articles.length; i++) {
+				var temp       = {};
+				temp._id 	   = articles[i]._id.toString();
+				temp.picture   = articles[i].pictures || "";
+				temp.title     = articles[i].title;
+				temp.content   = articles[i].text;
+				temp.createdAt = articles[i].created_at;
+				temp.nbComments = 0;//articles[i].commentaires.length;
+				articlesList.push(temp);
+			}
+			res.render('BaseBack/articles', {
+				pagename: "Mes articles",
+				authors: ['Adeline', 'Chris'],
+				session: req.session,
+				articles: articlesList,
+				actualBlog: req.params.id_blog
+			});
 		});
-	});
 });
 
 app.post('/articles/comment', function (req, res) {
