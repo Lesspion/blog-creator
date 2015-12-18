@@ -357,6 +357,8 @@ form p {
 }
 .blogs-col img{
 	float: left;
+	width: 110px;
+	height: 110px;
 }
 
 /*MEDIA QUERI*/

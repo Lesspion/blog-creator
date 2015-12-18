@@ -1,11 +1,9 @@
 
-<div class="comment_header">
-    <h4>COMMENTAIRES</h4>
-</div>
+
 <div class="comment_users">
-    <img src="{{ base_URI }}/assets/img/test-user.jpeg">
+    <img src="{{ base_URI }}/{{comment.picture}}">
     <div class="content_post w250">
-        <p><a href="">{{ comment.picture }}</a></p>
+        <p><a href="">{{ comment.pseudo }}</a></p>
         <div class="post_desc">
             <p>{{ comment.content}}</p>
         </div>
@@ -20,5 +18,6 @@
             </div>
         </div>
     </div>
+    <div class="clear"></div>
 </div>
 

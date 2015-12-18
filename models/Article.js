@@ -6,7 +6,6 @@ var ArticleSchema   = new Schema({
 	text: String,
 	title: String,
 	image: [String],
-	commentaires: [{type: Schema.ObjectId, ref: "Commentaire"}],
 	created_at: Date,
 	updated_at: Date
 });

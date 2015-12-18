@@ -1,13 +1,13 @@
 <div class="message">
-	<img src="{{ base_URI }}/assets/img/user-test.gif" alt="profil">
+	<img src="{{ base_URI }}/{{message.picture}}" alt="profil">
 	<div class="content_post w250">
 		<h3>{{ message.author}}</h3>
 		<div class="post_desc">
-			<p>{{ message.message}}</p>
+			<p>{{ message.text}}</p>
 		</div>
 		<div class="post_meta">
             <div class="meta_info">
-                <span class="date">{{message.createdAt}}</span>
+                <span class="date">{{message.createdAt|date('d M Y - H:i')|toString}}</span>
             </div>
             <div>
                 {% if mine == true %}
@@ -15,63 +15,6 @@
                     <button type="submit" id="suppr">X</button>
                 </form>
                 {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
-<div class="message">
-	<img src="{{ base_URI }}/assets/img/user-test.gif" alt="profil">
-	<div class="content_post w250">
-		<h3>Lili</h3>
-		<div class="post_desc">
-			<p>T'es trop belle ;)</p>
-		</div>
-		<div class="post_meta">
-            <div class="meta_info">
-                <span class="date">17 novembre 2015 - 18h38 min</span>
-            </div>
-            <div>
-                <form>
-                    <button type="submit" id="suppr">X</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="message">
-	<img src="{{ base_URI }}/assets/img/user-test.gif" alt="profil">
-	<div class="content_post w250">
-		<h3>Lili</h3>
-		<div class="post_desc">
-			<p>T'es trop belle ;)</p>
-		</div>
-		<div class="post_meta">
-            <div class="meta_info">
-                <span class="date">17 novembre 2015 - 18h38 min</span>
-            </div>
-            <div>
-                <form>
-                    <button type="submit" id="suppr">X</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="message">
-	<img src="{{ base_URI }}/assets/img/user-test.gif" alt="profil">
-	<div class="content_post w250">
-		<h3>Lili</h3>
-		<div class="post_desc">
-			<p>T'es trop belle ;)</p>
-		</div>
-		<div class="post_meta">
-            <div class="meta_info">
-                <span class="date">17 novembre 2015 - 18h38 min</span>
-            </div>
-            <div>
-                <form>
-                    <button type="submit" id="suppr">X</button>
-                </form>
             </div>
         </div>
     </div>

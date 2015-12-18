@@ -119,4 +119,16 @@ app.get('/articles/:id_blog', function (req, res) {
 	});
 });
 
+app.post('/articles/comment', function (req, res) {
+	var com = new Commentaire();
+	com.content = req.body.comment;
+	com.id_article = req.body.id_article;
+	com.id_user = req.body.id_sender;
+	com.createdAt = Date.now();
+	
+	com.save(function (err) {
+		res.redirect('/blog/' + req.body.pseudo + '/' + req.body.id_blog + '/' + req.body.id_article);
+	});
+});
+
 module.exports = app;

@@ -111,6 +111,7 @@ app.get('/profil/:id_user?', function (req, res) {
 		}
 		User.findOne({_id: id_user}, function (err2, current) {
 			Message.getAll(id_user, function (messages) {
+				console.log("messages : ", messages);
 				res.render('BaseBack/profil', {
 					pagename: "Profil",
 					authors: ['Adeline', 'Chris'],
@@ -144,6 +145,7 @@ app.get('/blog/:author_name/:id_blog', function (req, res) {
 				req.session.picture = Picture.Profil.get(author._id);
 				author.picture = Picture.Profil.get(author._id);
 				author.name    = author.pseudo
+				// req.session.articles = articlesList;
 				res.render('Blog/home', {
 					pagename: "Home",
 					authors: ['Adeline', 'Chris'],
