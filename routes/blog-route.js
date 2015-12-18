@@ -5,6 +5,7 @@ var Blog 		= require('../models/Blog');
 var Article     = require('../models/Article');
 var isConnected = require('../personal_modules/TestConnected');
 var Picture     = require('../personal_modules/Picture');
+var Message     = require('../personal_modules/GetMessages');
 
 app.post('/create', function (req, res) {
 	if (!isConnected(req)) {
@@ -109,13 +110,17 @@ app.get('/profil/:id_user?', function (req, res) {
 			mine = true;
 		}
 		User.findOne({_id: id_user}, function (err2, current) {
-			res.render('BaseBack/profil', {
-				pagename: "Profil",
-				authors: ['Adeline', 'Chris'],
-				session: req.session,
-				blogs: blogSend,
-				mine: mine,
-				current: current
+			Message.getAll(id_user, function (messages) {
+				res.render('BaseBack/profil', {
+					pagename: "Profil",
+					authors: ['Adeline', 'Chris'],
+					session: req.session,
+					blogs: blogSend,
+					mine: mine,
+					current: current,
+					messages: messages,
+					profileOf: id_user
+				});
 			});
 		});
 	});
@@ -138,12 +143,14 @@ app.get('/blog/:author_name/:id_blog', function (req, res) {
 				}
 				req.session.picture = Picture.Profil.get(author._id);
 				author.picture = Picture.Profil.get(author._id);
+				author.name    = author.pseudo
 				res.render('Blog/home', {
 					pagename: "Home",
 					authors: ['Adeline', 'Chris'],
 					session: req.session,
 					articles: articlesList,
-					author: author
+					author: author,
+					curBlog: req.params.id_blog
 				});
 			});
 		});
