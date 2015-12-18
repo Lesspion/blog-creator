@@ -1,12 +1,12 @@
 <div class="blogs-col">
     <ul>
         <li class="clearfix">
-            <a href="#" title="View the blogs">
+            <a href="{{base_URI}}/blog/{{blog.author}}/{{blog._id|toString}}" title="View the blogs">
                 <img src="{{blog.picture}}"  alt="blog attached picture">
                 <p class="blog-title">{{blog.name}}</p>
             </a>
             <p class="blog-infos">
-                <a href="{{base_URI}}/profil/{{blog._id|toString}}" class="userFile" data-id="{{ blog._id|toString }}">{{blog.author}}</a>
+                <a href="{{base_URI}}/profil/{{blog.author_id|toString}}" class="userFile" data-id="{{ blog.author_id|toString }}">{{blog.author}}</a>
                 <span>{{blog.createdAt}}</span>
             </p>
         </li>
