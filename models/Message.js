@@ -5,7 +5,7 @@ var MessageSchema   = new Schema({
 	id_blogger: {type: Schema.ObjectId, ref: "User"},
 	id_sender: {type: Schema.ObjectId, ref: "User"},
 	text: String,
-	view: Boolean
+	created_at: Date
 });
 
 module.exports = mongoose.model('Message', MessageSchema);
