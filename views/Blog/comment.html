@@ -1,31 +1,24 @@
-<div class="comment_box">
-    <div class="comment_header">
-        <h4>COMMENTAIRES</h4>
-    </div>
-    <div class="comment_users">
-        <img src="{{ base_URI }}/assets/img/test-user.jpeg">
-        <div class="content_post w250">
-            <p><a href="">{{ comment.picture }}</a></p>
-            <div class="post_desc">
-                <p>{{ comment.content}}</p>
+
+<div class="comment_header">
+    <h4>COMMENTAIRES</h4>
+</div>
+<div class="comment_users">
+    <img src="{{ base_URI }}/assets/img/test-user.jpeg">
+    <div class="content_post w250">
+        <p><a href="">{{ comment.picture }}</a></p>
+        <div class="post_desc">
+            <p>{{ comment.content}}</p>
+        </div>
+        <div class="post_meta">
+            <div class="meta_info">
+                <span class="date">{{ comment.createdAt|date('d M Y - H:i')}}</span>
             </div>
-            <div class="post_meta">
-                <div class="meta_info">
-                    <span class="date">{{ comment.createdAt|date('d M Y - H:i')}}</span>
-                </div>
-                <div>
-                    <form>
-                        <button type="submit">X</button>
-                    </form>
-                </div>
+            <div>
+                <form>
+                    <button type="submit">X</button>
+                </form>
             </div>
         </div>
     </div>
-    <div class="comment_form">
-        <form id="commentform" class="commentform" method="post" action="#">
-            <input type="text" id="author" name="name" placeholder="Name"/>
-            <textarea name="comment" id="comment" cols="75" rows="10"></textarea>
-            <p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
-        </form>
-    </div>
 </div>
+
