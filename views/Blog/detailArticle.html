@@ -31,15 +31,16 @@
 					    </div>
 					    <div class="clear"></div>
 					    <div class="comment_box">
-					    <div class="comment_form">
-						{% for comment in comments %}
-		        			{% include 'comment.html'%}
-						{% endfor%}
-							<form id="commentform" class="commentform" method="post" action="#">
-				            	<input type="text" id="author" name="name" placeholder="Name"/>
-				            	<textarea name="comment" id="comment" cols="75" rows="10"></textarea>
-				            	<p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
-        					</form>
+						    <div class="comment_form">
+								{% for comment in comments %}
+				        			{% include 'comment.html'%}
+								{% endfor%}
+								<form id="commentform" class="commentform" method="post" action="#">
+					            	<input type="text" id="author" name="name" placeholder="Name"/>
+					            	<textarea name="comment" id="comment" cols="75" rows="10"></textarea>
+					            	<p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
+	        					</form>
+							</div>
 						</div>
 					</div>
 				</div>
