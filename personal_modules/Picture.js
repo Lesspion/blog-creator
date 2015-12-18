@@ -11,6 +11,15 @@ var Picture = {
 				return 'assets/img/default.png';
 			}
 		},
+	},
+	Article: {
+		get: function (id) {
+			if (fs.existsSync(path.join(path.join(__dirname, '../assets/upload') + '/' + id))) {
+				return 'assets/upload/id';
+			} else {
+				return 'assets/img/defaultArticle.png';
+			}
+		},
 	}
 };
 
