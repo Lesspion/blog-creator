@@ -57,7 +57,7 @@ app.get('/subdomain/:login', function (req, res) {
 });
 
 app.get('/', function (req, res) {
-	req.session.touch();
+	// req.session = {};
 	req.session.connected = false;
 	fetchBlog(function (blogs) {
 		res.render('index', {
@@ -89,16 +89,7 @@ app.get('/blog/article', function (req, res) {
 	});
 });
 
-// app.get('/profil', function (req, res) {
-// 	res.render('BaseBack/profil', {
-// 		pagename: "Profil",
-// 		authors: ['Adeline', 'Chris'],
-// 		session: req.session
-// 	});
-// });
-
 app.get('/accueil', function (req, res) {
-	console.log("_id : ", req.session._id);
 	req.session.picture = Picture.Profil.get(req.session._id);
 	fetchBlog(function (blogs) {
 		res.render('BaseBack/accueil', {
