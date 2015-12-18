@@ -9,8 +9,8 @@ var sortBlog = function (blogsArray) {
 		temp.name = blogsArray[i].name;
 		temp.category = blogsArray[i].category;
 		temp.createdAt = "xx/xx/xxxx";
-		console.log("blogsArray : ", blogsArray[i]);
 		temp.author = blogsArray[i].id_user.pseudo;
+		temp.author_id = blogsArray[i].id_user._id;
 		temp.picture = Picture.Profil.get(blogsArray[i].id_user);
 		finalBlogs.push(temp);
 	}
