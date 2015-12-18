@@ -5,6 +5,7 @@ var Blog 		= require('../models/Blog');
 var Article 	= require('../models/Article');
 var Commentaire = require('../models/Commentaire');
 var isConnected = require('../personal_modules/TestConnected');
+var Picture     = require('../personal_modules/Picture');
 
 app.use(function (req, res, next) {
 	if (isConnected(req)) {
@@ -31,7 +32,6 @@ app.post('/create/article/:id_blog', function (req, res) {
 		article.text  		= req.body.content;
 		article.created_at  = Date.now();
 		article.updated_at  = Date.now();
-		console.log('I\'m here !');
 		if (req.files) {
 			//install multer plugin https://github.com/expressjs/multer
 		}
