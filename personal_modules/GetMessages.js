@@ -12,7 +12,7 @@ var MessageService = {
 					
 					temp._id         = messages[i]._id;
 					temp.author      = messages[i].id_sender.pseudo;
-					temp.text        = messages[i].message;
+					temp.text        = messages[i].text;
 					temp.picture     = Picture.Profil.get(messages[i].id_sender._id);
 					temp.createdAt   = messages[i].created_at;
 					
@@ -23,7 +23,6 @@ var MessageService = {
 	},
 	post: function (msgObject) {
 		var msg        = new Message();
-		console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', msgObject, '!!!!!!!!!!!!!!!!!!!!!!!!!!');
 		msg.id_blogger = msgObject.id_blogger;
 		msg.id_sender  = msgObject.id_sender;
 		msg.text       = msgObject.text;

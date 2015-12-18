@@ -111,6 +111,7 @@ app.get('/profil/:id_user?', function (req, res) {
 		}
 		User.findOne({_id: id_user}, function (err2, current) {
 			Message.getAll(id_user, function (messages) {
+				console.log("messages : ", messages);
 				res.render('BaseBack/profil', {
 					pagename: "Profil",
 					authors: ['Adeline', 'Chris'],

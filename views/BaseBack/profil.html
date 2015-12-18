@@ -30,9 +30,13 @@
 			<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
 			<!--MESSAGERIE-->
 			<div class="messagerie">
-				<form action="#" method="post" id="search" class="left">
-				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{current.pseudo}}" />
-				   <button type="submit" name="send">Envoyer</button>
+				<form action="{{base_URI}}/message" method="post" id="search" class="left">
+					<input name="id_sender" type="hidden" value="{{session._id}}"/>
+					<input name="id_blogger" type="hidden" value="{{current._id|toString}}"/>
+					current : {{current._id|toString}}
+					
+				    <input name="msg" id="msg" type="text" placeholder="Laissez un message à {{current.pseudo}}" />
+				    <button type="submit" name="send">Envoyer</button>
 				</form>
 				<div class="overflow">
 					{% for message in messages %}
@@ -62,15 +66,10 @@
 		<script type="text/javascript" src="{{ base_URI }}/assets/js/home.js"></script>
 		<script type="text/javascript">
 			$('button[name=send]').on('click', function (e) {
-				e.preventDefault();
-				content = {};
-				content.text = document.querySelector('#msg').value;
-				content.id_sender = "{{session._id}}";
-				content.id_blogger = "{{profileOf}}";
-				$.post('{{base_URI}}/message', content, function (hello) {
-					alert('hello');
-				});
-				return false;
+				if ($('#msg').val() === "") {
+					e.preventDefault();
+					return false;	
+				}
 			});
 		</script>
 {% endblock %}

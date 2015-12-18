@@ -14,9 +14,16 @@ app.get('/all/message/:id_user', function (req, res) {
 			});
 });
 
-router.post('/message', function (req, res) {
-	console.log('i"m here');
-	Msg.post(req.body.message);
+app.post('/message', function (req, res) {
+	var msg        = new Message();
+		msg.id_blogger = req.body.id_blogger;
+		msg.id_sender  = req.body.id_sender;
+		msg.text       = req.body.msg;
+		msg.created_at = Date.now();
+		
+		msg.save(function (err) {
+			res.redirect('/profil/' + req.body.id_sender);
+		});
 });
 
-module.exports  = router;
+module.exports  = app;
