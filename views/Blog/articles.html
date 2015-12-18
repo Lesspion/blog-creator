@@ -1,6 +1,6 @@
 <!-- Remplacé par les variables -->
 <div class="latest-post">
-    <div class="w250 img"><img src="{{ article.picture }}"></div>
+    <div class="w250 img"><img src="{{base_URI}}/{{ article.picture }}"></div>
     <div class="content_post w250">
         <div class="post_title">
             <a href="article">
@@ -8,7 +8,7 @@
             </a>
         </div>
         <div class="post_desc">
-            <p>{{ article.content}}</p>
+            <p>{{ article.content|striptags}}</p>
         </div>
         <div class="post_meta">
             <div class="meta_info">
