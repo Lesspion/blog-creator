@@ -1,17 +1,21 @@
-var express    = require('express');
-var app        = express();
-var bodyParser = require('body-parser');
-var mongoose   = require('mongoose');
-var swig 	   = require('swig');
-var subdomain  = require('subdomain');
-var userRoute  = require('./routes/user-route');
-var blogRoute  = require('./routes/blog-route');
+var express      = require('express');
+var app          = express();
+var bodyParser   = require('body-parser');
+var mongoose     = require('mongoose');
+var swig 	     = require('swig');
+var subdomain    = require('subdomain');
+var userRoute    = require('./routes/user-route');
+var blogRoute    = require('./routes/blog-route');
+var messageRoute = require('./routes/message-route');
 var articleRoute = require('./routes/article-route');
-var session    = require('express-session');
-var fetchBlog  = require('./personal_modules/Blog');
-var Picture    = require('./personal_modules/Picture');
-var Env        = require('./settings/env');
-var sortBlog   = require('./personal_modules/SortBlog');
+var session      = require('express-session');
+var fetchBlog    = require('./personal_modules/Blog');
+var Picture      = require('./personal_modules/Picture');
+var Env          = require('./settings/env');
+var sortBlog     = require('./personal_modules/SortBlog');
+var User         = require('./models/User');
+var Article      = require('./models/Article');
+var Blog         = require('./models/Blog');
 
 mongoose.connect('mongodb://localhost:27017/blogcreator');
 
@@ -72,22 +76,7 @@ app.get('/', function (req, res) {
 app.use('/', userRoute);
 app.use('/', blogRoute);
 app.use('/', articleRoute);
-
-app.get('/blog', function (req, res) {
-	res.render('Blog/home', {
-		pagename: "Home",
-		authors: ['Adeline', 'Chris'],
-		session: req.session
-	});
-});
-
-app.get('/blog/article', function (req, res) {
-	res.render('Blog/detailArticle', {
-		pagename: "detailArticle",
-		authors: ['Adeline', 'Chris'],
-		session: req.session
-	});
-});
+app.use('/', messageRoute);
 
 app.get('/accueil', function (req, res) {
 	req.session.picture = Picture.Profil.get(req.session._id);
@@ -97,6 +86,33 @@ app.get('/accueil', function (req, res) {
 			authors: ['Adeline', 'Chris'],
 			blogs: sortBlog(blogs),
 			session: req.session
+		});
+	});
+});
+
+app.get('/blog/:author_name/:id_blog/:id_article', function (req, res) {
+	User.findOne({pseudo: req.params.author_name}, function (errUser, author) {
+		Blog.findOne({_id: req.params.id_blog}, function (errBlog, blog) {
+			Article.findOne({id_blog: req.params.id_blog}, function (errArticle, articles) {
+				var temp        = {};
+				temp._id        = articles._id;
+				temp.createdAt  = articles.created_at;
+				temp.title      = articles.title
+				temp.content    = articles.text;
+				temp.nbComments = 0;
+				temp.picture    = Picture.Article.get(articles._id);
+				req.session.picture = Picture.Profil.get(author._id);
+				author.picture = Picture.Profil.get(author._id);
+				author.name    = author.pseudo
+				res.render('Blog/detailArticle', {
+					pagename: "detailArticle",
+					authors: ['Adeline', 'Chris'],
+					session: req.session,
+					article: temp,
+					author: author,
+					curBlog: req.params.id_blog
+				});
+			});
 		});
 	});
 });

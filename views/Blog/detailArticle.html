@@ -11,14 +11,14 @@
 			<div class="news">
 				<header class='content_banner'>
 					<div>
-						<h3>ArticleTitle</h3>
+						<h3>{{article.title}}</h3>
 					</div>
 				</header>
 				<div class="blog_post">
 					<div class="post-body">
 						<div class="entry_content w250">
-					        <p>{{ article.content }}</p>
-					        <div class=" ma mb15 w630 img"><img src="{{ article.picture }}"></div>
+					        <p>{{ article.content|striptags }}</p>
+					        <div class=" ma mb15 w630 img"><img src="{{base_URI}}/{{ article.picture }}"></div>
 					        
 					        <div class="post_meta">
 					            <div class="meta_info">
