@@ -7,7 +7,7 @@
             </a>
             <p class="blog-infos">
                 <a href="{{base_URI}}/profil/{{blog.author_id|toString}}" class="userFile" data-id="{{ blog.author_id|toString }}">{{blog.author}}</a>
-                <span>{{blog.createdAt}}</span>
+                <span>{{blog.createdAt|date('d M Y - H:i')|toString}}</span>
             </p>
         </li>
     </ul>

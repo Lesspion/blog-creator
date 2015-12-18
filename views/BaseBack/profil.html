@@ -33,7 +33,6 @@
 				<form action="{{base_URI}}/message" method="post" id="search" class="left">
 					<input name="id_sender" type="hidden" value="{{session._id}}"/>
 					<input name="id_blogger" type="hidden" value="{{current._id|toString}}"/>
-					current : {{current._id|toString}}
 					
 				    <input name="msg" id="msg" type="text" placeholder="Laissez un message à {{current.pseudo}}" />
 				    <button type="submit" name="send">Envoyer</button>

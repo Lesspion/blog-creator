@@ -31,18 +31,23 @@
 					    </div>
 					    <div class="clear"></div>
 					    <div class="comment_box">
-					    <div class="comment_form">
-						{% for comment in comments %}
-		        			{% include 'comment.html'%}
-						{% endfor%}
-							<form id="commentform" class="commentform" method="post" action="{{base_URI}}/articles/comment">
-								<input type="hidden" name="id_sender" value="{{session._id|toString}}" />
-								<input type="hidden" name="id_article" value="{{curArticle|toString}}"/>
-								<input type="hidden" name="pseudo" value="{{author.pseudo}}" />
-								<input type="hidden" name="id_blog" value="{{curBlog|toString}}" />
-				            	<textarea name="comment" id="comment" cols="75" rows="10"></textarea>
-				            	<p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
-        					</form>
+					    	<div class="comment_form">
+							    <div class="comment_header">
+		    						<h4>COMMENTAIRES</h4>
+								</div>
+								{% for comment in comments %}
+				        			{% include 'comment.html'%}
+								{% endfor%}
+								
+								<form id="commentform" class="commentform" method="post" action="{{base_URI}}/articles/comment">
+									<input type="hidden" name="id_sender" value="{{session._id|toString}}" />
+									<input type="hidden" name="id_article" value="{{curArticle|toString}}"/>
+									<input type="hidden" name="pseudo" value="{{author.pseudo}}" />
+									<input type="hidden" name="id_blog" value="{{curBlog|toString}}" />
+					            	<textarea name="comment" id="comment" cols="75" rows="10"></textarea>
+					            	<p><input type="submit" class="submit" id="submit" value="Laisser un commentaire" name="submit"></p>
+	        					</form>
+							</div>
 						</div>
 					</div>
 				</div>
