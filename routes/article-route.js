@@ -4,6 +4,15 @@ var User 		= require('../models/User');
 var Blog 		= require('../models/Blog');
 var Article 	= require('../models/Article');
 var Commentaire = require('../models/Commentaire');
+var isConnected = require('../personal_modules/TestConnected');
+
+app.use(function (req, res, next) {
+	if (isConnected(req)) {
+		next();
+	} else {
+		res.redirect('/');
+	}
+});
 
 app.get('/create/article/:id_blog', function (req, res) {
 	res.render('BaseBack/create', {
