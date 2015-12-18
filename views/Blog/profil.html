@@ -2,9 +2,9 @@
 	<div class="widget_title">
 		<h4>PROFIL</h4>
 		<div class="account">
-	        <a href="../profil" class="photo">
-	            <img src="{{ session.picture }}" alt="photo profil">
-	            <div class="photo-username">{{session.pseudo}}</div>
+	        <a href="{{base_URI}}/profil/{{author._id}}" class="photo">
+	            <img src="{{base_URI}}/{{ author.picture }}" alt="photo profil">
+	            <div class="photo-username">{{author.pseudo}}</div>
 	        </a>
 	    </div>
 	</div>
