@@ -30,7 +30,7 @@
 			<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
 			<!--MESSAGERIE-->
 			<div class="messagerie">
-				<form action="#" method="post" id="search" class="left">
+				<form id="search" class="left">
 				   <input name="search" id="msg" type="text" placeholder="Laissez un message à {{ session.pseudo }}" />
 				   <button type="submit" name="send">Envoyer</button>
 				</form>
@@ -60,5 +60,18 @@
 {% block javascripts%}
 	{% parent %}
 		<script type="text/javascript" src="{{ base_URI }}/assets/js/home.js"></script>
+		<script type="text/javascript">
+			$('button[name=send]').on('click', function (e) {
+				e.preventDefault();
+				content = {};
+				content.text = document.querySelector('#msg').value;
+				content.id_sender = "{{session._id}}";
+				content.id_blogger = "{{profileOf}}";
+				$.post('{{base_URI}}/message', content, function (hello) {
+					alert('hello');
+				});
+				return false;
+			});
+		</script>
 {% endblock %}
 {% endblock %}
