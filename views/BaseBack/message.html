@@ -10,9 +10,11 @@
                 <span class="date">{{message.createdAt}}</span>
             </div>
             <div>
+                {% if mine == true %}
                 <form>
                     <button type="submit" id="suppr">X</button>
                 </form>
+                {% endif %}
             </div>
         </div>
     </div>
