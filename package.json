@@ -21,6 +21,7 @@
     "express-vhost": "^0.2.0",
     "md5": "^2.0.0",
     "mongoose": "^4.2.7",
+    "multer": "^1.1.0",
     "subdomain": "^1.2.0",
     "swig": "^1.4.2",
     "vhost": "^3.0.2"

@@ -1,6 +1,8 @@
-var testConnection = function (request, response) {
-	if (request.session.connected == false) {
-		response.redirect('/');
+var testConnection = function (request) {
+	if (!request.session.connected || request.session == "undefined") {
+		return false;
+	} else {
+		return true;
 	}
 };
 

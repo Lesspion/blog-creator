@@ -9,16 +9,16 @@
 			<ul class="nav navbar-nav">
 			<li>
                 <form action="#" method="post" id="search" class="left">
-				   <img src="assets/img/nav-search-loupe.png">
+				   <img src="{{ base_URI }}/assets/img/nav-search-loupe.png">
 				    <input name="search" type="search" placeholder="Rechercher des blogs" />
 				    <button type="submit" name="ok">ok</button>
 			    </form>
             </li>
            		
 	            <div class="account">
-			        <p class="post"><a href="/articles" title="">Creer un blog</a></p>
+			        <p class="post"><a href="{{base_URI}}/create" title="">Creer un blog</a></p>
 			        <a href="#" class="photo">
-			            <img src="{{ session.picture }}" alt="photo profil">
+			            <img src="{{base_URI}}/{{ session.picture }}" alt="photo profil">
 			            <div class="photo-username">{{session.pseudo}}</div>
 			        </a>
 			        <div id="menu">

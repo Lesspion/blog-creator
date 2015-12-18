@@ -15,14 +15,16 @@
 		<div class="wrap">
 			<div class="user">
 				<img src="{{ base_URI }}/assets/img/default.png" alt="profil">
-				<h3>{{session.pseudo}}</h3>
+				<h3>{{current.pseudo}}</h3>
 				<p>
-					<form action="" method="post" enctype="multipart/form-data">
-					    <div class="upload">
-					    <p>Changer sa photo de profil</p>
-					        <input type="file" name="upload"/>
-					    </div>
-					</form>
+					{% if mine == true %}
+						<form action="" method="post" enctype="multipart/form-data">
+							<div class="upload">
+							<p>Changer sa photo de profil</p>
+								<input type="file" name="upload"/>
+							</div>
+						</form>
+					{% endif %}
 				</p>
 			</div>
 			<a href="/create"><button class="button button--pipaluk button--inverted clear">Creer Un Blog</button></a>
